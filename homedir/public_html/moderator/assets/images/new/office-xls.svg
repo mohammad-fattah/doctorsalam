@@ -1,0 +1,14 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" style="" xml:space="preserve"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+
+<g class="currentLayer" style=""><title>Layer 1</title><g id="Frame_-_24px">
+	<rect style="fill: none;" width="24" height="24" id="svg_1"/>
+</g><g id="Line_Icons" class="selected" fill-opacity="1" fill="#fefefe">
+	<g id="svg_2" fill="#fefefe">
+		<path style="" d="M5.133,3h10v4h4v1h2V5.586L16.547,1H5.133c-1.103,0-2,0.898-2,2v5h2V3z" id="svg_3" fill="#fefefe"/>
+		<path style="" d="M19.133,21h-14v-1h-2v1c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2v-1h-2V21z" id="svg_4" fill="#fefefe"/>
+		<polygon style="" points="10.133,10 10.133,18 15.133,18 15.133,16 12.133,16 12.133,10   " id="svg_5" fill="#fefefe"/>
+		<path style="" d="M18.633,12h3.5v-2h-3.5c-1.378,0-2.5,1.122-2.5,2.5s1.122,2.5,2.5,2.5h1c0.276,0,0.5,0.225,0.5,0.5    c0,0.275-0.224,0.5-0.5,0.5h-3.5v2h3.5c1.378,0,2.5-1.122,2.5-2.5s-1.122-2.5-2.5-2.5h-1c-0.276,0-0.5-0.225-0.5-0.5    C18.133,12.225,18.357,12,18.633,12z" id="svg_6" fill="#fefefe"/>
+		<polygon style="" points="4.333,18 5.566,15.944 6.8,18 9.133,18 6.732,14 9.133,10 6.8,10 5.566,12.056 4.333,10     2,10 4.4,14 2,18   " id="svg_7" fill="#fefefe"/>
+	</g>
+</g></g></svg>

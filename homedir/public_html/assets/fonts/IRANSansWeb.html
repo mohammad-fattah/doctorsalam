@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR" prefix="og: http://ogp.me/ns#"  ng-app="BimiTOApp" ng-controller="rootCtrl">
+	<!-- start social profiles (https://developers.google.com/structured-data/customize/social-profiles) -->
+	 <script type="application/ld+json">
+	 { 
+	 "@context" : "http://schema.org",
+	 "@type" : "Organization",
+	 "name" : "Bimito",
+	 "url" : "https://bimito.com/",
+	 "logo": "https://bimito.com/images/bimito-logo.png",
+	 "sameAs" : [ 
+	 "http://facebook.com/bimitocom",
+	 "https://instagram.com/bimitocom",
+	"https://plus.google.com/+Bimito",
+	"https://telegram.me/bimito",
+	"https://twitter.com/BimitoCom"
+	 ]
+	 }
+	 </script>
+	 <!-- end social profiles -->
+	<head>
+		<base href="/">
+		<meta property="og:locale" content="fa_IR"/>
+		<!-- <title>بیمیتو | مقایسه، خرید و مدیریت بیمه آنلاین</title> -->
+		<title ng-bind="'بیمیتو | ' +title">بیمیتو | مقایسه، خرید و مدیریت بیمه آنلاین</title>
+		<meta http-equiv="Content-Type" content="Type=text/html; charset=UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta property="og:type" content="website"/>
+	    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    	<link rel="stylesheet" type="text/css" href="styles/spinner.css">
+	    <meta name="robots" content="noodp"/>
+		<link rel="canonical" href="https://bimito.com/"/>
+		<meta name="fragment" content="!" />
+		<meta name="robots" content="index, follow" />
+	    <meta property="og:title" content="مقایسه، خرید و مدیریت بیمه آنلاین" />
+		<meta property="og:site_name" content="بیمیتو | Bimito"/>
+		<meta property="og:description" ng-attr-content="{{description}}" content="با اپ و وب‌سایت بیمیتو می‌تونی بیمَتو خیلی آسون بخری. شرکت‌های بیمه رو مقایسه کن و اونی که متناسب با نیازت هست رو بخر و بیمَتو دم خونه تحویل بگیر." />
+		<meta property="og:url" content="http://bimito.com/"/>
+	    <meta name="keywords" content="بیمیتو,بیمه,خرید بیمه آنلاین,خرید بیمه, مقایسه شرکت های بیمه, مقایسه قیمت بیمه, بیمه آنلاین, بیمه شخص ثالث, بیمه عمر, خرید بیمه عمر, خرید بیمه شخص ثالث, beemeeto, bimito, bimeh, bimehito, bimito.ir, bimito.net, bime, bimito.org,بیمه رازی,بیمه آسیا,بیمه دانا,بیمه ایران,بیمه آسیا,بیمه کارآفرین,بیمه البرز,بیمه ما,بیمه پاسارگاد,بیمه پارسیان,مشاوره بیمه عمر, مشاوره بیمه بدنه,خرید آنلاین بیمه بدنه, خرید بیمه نامه, خرید اینترنتی بیمه, خرید اینترنتی بیمه ثالث, خرید اینترنتی بیمه عمر, بیمه دانا, بیمه آسیا, بیمه البرز, بیمه کارآفرین, بیمه نوین, بیمه پاسارگاد, بیمه ایران, بیمه رازی, بیمه پارسیان, بیمه">
+	    <meta name="description" ng-attr-content="{{description}}" content="وب سایت و اپلیکیشن مدیریت، مقایسه و خرید آنلاین بیمه. بیمه نامه های شخص ثالث، بدنه، مسئولیت و غیره با مناسب ترین قیمت همراه با تخفیف ویژه.">
+		<meta content='http://www.bimito.com/' property='og:url'>
+		<meta content='http://www.bimito.com/' property='twitter:url'>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:site" content=@BimitoCom/>
+		<meta name="twitter:description" ng-attr-content="{{description}}" content="بیمیتو بستری برای خرید آنلاین بیمه شخص ثالث ، بیمه بدنه ، بیمه آتش سوزی از تمامی شرکت های بیمه (بیمه ایران ، آسیا ، البرز ، پاسارگاد و ...) است."/>
+		<meta name="twitter:title" content="خرید آنلاین بیمه شخص ثالث ، بدنه و آتش سوزی" />
+		<meta name="twitter:image" content="images/twitter/bimito-home.png" />
+		<meta name="twitter:image:alt" content="بیمیتو" />
+		<meta property="og:image" content="images/bimito-logo.png" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <meta name="enamad" content="811768962"/>
+	    <meta name="samandehi" content="711898076"/>
+	    <meta name="msapplication-TileImage" content="images/logo/icon-300x300.png" />
+	    <link hreflang="x-default" href="/">
+    	<link href="images/bimito-logo.png" rel="apple-touch-icon" />
+    	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    	
+    	<link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+    	<link rel="stylesheet" type="text/css" href="styles/font-awesome.min.css">
+    	<link rel="stylesheet" type="text/css" href="styles/animate.css">
+    	<link rel="stylesheet" type="text/css" href="styles/ng-jalaali-flat-datepicker.min.css">
+    	<link rel="stylesheet" type="text/css" href="styles/dashboard-1.0.2.css">
+	    <link rel="stylesheet" type="text/css" href="styles/home-1.0.8.css">
+	    <link rel="stylesheet" type="text/css" href="styles/contactus-1.0.0.css">
+	    <link rel="stylesheet" type="text/css" href="styles/faq-1.0.0.css">
+	    <link rel="stylesheet" type="text/css" href="styles/search-1.0.5.css">
+	    <link rel="stylesheet" type="text/css" href="styles/moreinfo-1.0.3.css">
+    	<link rel="stylesheet" type="text/css" href="styles/mobile-1.0.1.css">
+    	<link rel="stylesheet" type="text/css" href="styles/slick.css">
+    	<link rel="stylesheet" type="text/css" href="styles/slick-theme.css">
+
+    	<link rel="stylesheet" type="text/css" href="styles/intro/introjs-rtl.css">
+    	<link rel="stylesheet" type="text/css" href="styles/intro/introjs.css">
+
+    	<link rel="stylesheet" href="styles/rzslider.min.css" />
+    	<link rel="apple-touch-icon-precomposed" href="images/logo/apple-touch-icon-precomposed" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon.png" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-57x57.png" sizes="57x57" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-60x60.png" sizes="60x60" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-72x72.png" sizes="72x72" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-76x76.png" sizes="76x76" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-114x114.png" sizes="114x114" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-120x120.png" sizes="120x120" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-144x144.png" sizes="144x144" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-152x152.png" sizes="152x152" />
+		<link rel="apple-touch-icon" type="image/png" href="images/logo/apple-touch-icon-180x180.png" sizes="180x180" />
+		<link rel="icon" href="images/logo/icon-150x150.png" sizes="32x32" />
+		<link rel="icon" href="images/logo/icon-310x310.png" sizes="192x192" />
+		<script defer>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		  ga('create', 'UA-89339097-1', 'auto');
+
+		</script>
+	    <script type="text/javascript" src="js/prerequisities.min.js"></script>
+		<!--Start of Zendesk Chat Script-->
+		<script type="text/javascript">
+		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+		$.src="https://v2.zopim.com/?4ecg5KGSEiiCqFpXg860eH2sqUbx8IJt";z.t=+new Date;$.
+		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+		</script>
+		<!--End of Zendesk Chat Script-->
+	</head>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	if(window.innerWidth > 991){
+		$('ul.nav li.dropdown').hover(function() {
+		  $(this).find('.dd-hover').stop(true, true).fadeIn(100);
+		}, function() {
+		  $(this).find('.dd-hover').stop(true, true).fadeOut(100);
+		});
+	}
+});
+</script>
+
+	<body>
+		<header ng-if="!nonav" ng-init="check_user()"  ng-cloak>
+			<nav class="navbar">
+			  <div class=" inner-content">
+			    <div class="navbar-header">
+			      <a class="navbar-brand navbar-right" ui-sref="main.home"><img class="navbar-name" src="images/logo.svg" alt="وب سایت و اپلیکیشن مدیریت، مقایسه و خرید آنلاین بیمه"></a>
+			      <button type="button" class="navbar-toggle collapsed navbar-left" data-toggle="collapse" data-target="#bs-collapse" aria-expanded="false">
+			        <span class="sr-only">بیمه نامه های شخص ثالث، بدنه، مسئولیت و غیره با مناسب ترین قیمت همراه با تخفیف ویژه</span>
+			        <span class="icon-bar top-bar"></span>
+			        <span class="icon-bar middle-bar"></span>
+			        <span class="icon-bar bottom-bar"></span>
+			      </button>
+			    </div>
+			    <div class="collapse navbar-collapse nav-collapse" id="bs-collapse">
+			      <ul class="nav navbar-nav navbar-right">
+			        <li ng-class="isactive[0]">
+						<a href="" ui-sref="main.home" ng-click="changeTab(0)" data-toggle="collapse" data-target=".nav-collapse.in">صفحه اصلی</a>
+					</li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">بیمه خودرو <b class="caret"></b></a>
+
+                        <ul class="dropdown-menu dd-hover">
+                          <li ng-class="isactive[4]">
+				        	<a href="" ui-sref="insurs.thirdinsur" ng-click="changeTab(4)" data-toggle="collapse" data-target=".nav-collapse.in">بیمه شخص ثالث</a>
+				          </li>
+				          <li class="divider"></li>
+				          <li ng-class="isactive[5]">
+				        	<a href="" ui-sref="insurs.bodyinsur" ng-click="changeTab(5)" data-toggle="collapse" data-target=".nav-collapse.in">بیمه بدنه</a>
+				          </li>
+                        </ul>
+
+
+                    </li>
+                   
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">بیمه اموال <b class="caret"></b></a>
+                        <ul class="dropdown-menu dd-hover">
+                          <li ng-class="isactive[7]">
+		        			<a href="" ui-sref="insurs.fireinsur" ng-click="changeTab(7)" data-toggle="collapse" data-target=".nav-collapse.in">بیمه آتش&zwnj;سوزی</a>
+		        		  </li>
+				          <!-- <li class="divider"></li> -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">بیمه اشخاص <span class="caret"></span></a>
+                        <ul class="dropdown-menu dd-hover">
+                          <li ng-class="isactive[6]">
+		        			<a href="" ui-sref="insurs.travelinsur" ng-click="changeTab(6)" data-toggle="collapse" data-target=".nav-collapse.in">بیمه مسافرتی</a>
+		        		  </li>
+				          <li class="divider"></li>
+				          <li ng-class="isactive[3]">
+		        			<a href="" ui-sref="insurs.lifeinsur" ng-click="changeTab(3)" data-toggle="collapse" data-target=".nav-collapse.in">بیمه عمر</a>
+		        		  </li>
+                        </ul>
+                    </li>
+
+		        	
+					<li ng-class="isactive[1]">
+						<a href="" ui-sref="main.terms" ng-click="changeTab(1)" data-toggle="collapse" data-target=".nav-collapse">شرایط و قوانین</a>
+					</li>
+		        	<li ng-class="isactive[2]">
+		        		<a href="" ui-sref="main.faq.index" ng-click="changeTab(2)" data-toggle="collapse" data-target=".nav-collapse">سوالات متداول</a>
+		        	</li>
+		        	<li ng-class="isactive[3]">
+		        		<a href="http://blog.bimito.com/" ng-click="changeTab(3)" data-toggle="collapse" data-target=".nav-collapse.in">بلاگ</a>
+		        	</li>
+		        	<li ng-class="isactive[6]">
+		        		<a href="" ui-sref="main.coop" ng-click="changeTab(6)" data-toggle="collapse" data-target=".nav-collapse.in">همکاری با ما</a>
+		        	</li>
+			      </ul>
+			      <ul class="nav navbar-nav" ng-if="!hideloginbutton">
+			      	<li><a ui-sref="profile.personal" class='my-insur-btn' ng-if="user.id">
+			      	<img class="my-insur-photo hidden-xs hidden-sm" ng-src="{{my_insure_pic}}" alt="بیمه‌های من">بیمه‌های من</a></li>
+			        <li class="dropdown user-name"   data-toggle="collapse" data-target=".nav-collapse.in">
+						<button class="log-out dropdown-toggle" type="button" data-toggle="dropdown">
+							<span class="caret"></span>
+							<!-- <img class="profile-photo" ng-src="{{pro}}" alt="پروفایل مشتریان"> -->
+							<span class="name" ng-bind="user.firstName+' '+user.lastName">ثبت نام کنید</span>
+						</button>
+						<ul class="dropdown-menu dropdown-exit">
+							<!-- <li><a ui-sref="profile.personal">بیمه‌های من</a></li>
+							<li class="divider"></li> -->
+							<li><a ui-sref="main.home" ng-click="log_out()">خروج</a></li>
+						</ul>
+					</li>
+					<li class="navbar-item" ng-if="!user.id"  data-toggle="collapse" data-target=".nav-collapse.in">
+						<a data-toggle="modal" data-target="#registerModal" class="left-line" ng-disabled="registering"><span class="fa fa-pencil-square-o"></span> ثبت نام</a>
+					</li>
+					<li class="navbar-item most-left-li" ng-if="!user.id"  data-toggle="collapse" data-target=".nav-collapse.in" ng-click="menuopen=!menuopen">
+						<a data-toggle="modal" data-target="#loginModal" class="" ng-disabled="logining"><span class="fa fa-key"></span> ورود / پیگیری</a>
+					</li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</header>
+		<!-- <div ng-if="showApp" class="visible-xs download-mobile">
+			<p><button type="button" class="close close-on-popup" data-dismiss="alert" aria-label="Close" ng-click="noApp()"><span aria-hidden="true">&times;</span></button>
+			 &nbsp اپلیکیشن بیمیتو را دانلود نمایید.</p>
+			<div class="down-imgs">
+				<a href="https://play.google.com/store/apps/details?id=com.nar.bimito&hl=en" ng-click="eventFired('google download link clicked','download','google')"><img class="goog" src="../../images/google.png"></a>
+				<a ng-click="eventFired('bazar download link clicked','download','bazar')"><img class="bazar" src="../../images/bazar.png"></a>
+			</div>
+		</div> -->
+		<div ng-if="false" class="text-center">
+			<div class="h1">لطفا شکیبا باشید</div>
+			<div class="sk-circle">
+				<div class="sk-circle1 sk-child"></div>
+				<div class="sk-circle2 sk-child"></div>
+				<div class="sk-circle3 sk-child"></div>
+				<div class="sk-circle4 sk-child"></div>
+				<div class="sk-circle5 sk-child"></div>
+				<div class="sk-circle6 sk-child"></div>
+				<div class="sk-circle7 sk-child"></div>
+				<div class="sk-circle8 sk-child"></div>
+				<div class="sk-circle9 sk-child"></div>
+				<div class="sk-circle10 sk-child"></div>
+				<div class="sk-circle11 sk-child"></div>
+				<div class="sk-circle12 sk-child"></div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" role="dialog">
+				<div class="modal-content" ng-if="!forget">
+					<div class="modal-header">
+						<button type="button" class="close pull-left" data-dismiss="modal">&times;</button>
+						<div class="h4 modal-title">ورود</div>
+					</div>
+					<form ng-if="welcome==''" id="loginForm" class="form-horizontal registerForm modal-body" name="loginForm">
+						<div class="form-group">
+							<label for="cell" class="col-sm-4 col-xs-4 control-label">شماره موبایل</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control phone" name="cell" placeholder="09*********" ng-model="loginuser.phoneNumber" englishp-num="loginuser.phoneNumber" ng-class="{'invalid':loginForm.cell.$invalid}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-4 col-xs-4 control-label">رمز عبور</label>
+							<div class="col-sm-8 col-xs-8">
+								<input ng-if="showPass" type="text" class="form-control" id="pass1" name="password1" placeholder="رمز عبور" ng-model="loginuser.password" english-num="loginuser.password">
+								<input ng-if="!showPass" type="password" class="form-control" id="pass1" name="password1" placeholder="رمز عبور" ng-model="loginuser.password" english-num="loginuser.password">
+								<div>
+									<input type="checkbox" name="showPass" ng-model="showPass"> نمایش رمز عبور &nbsp&nbsp
+									<span class='msg-block msg-error' ng-show='error3'>
+									{{errMessage3}}&nbsp
+									</span>
+									<span class='msg-block msg-error' ng-show='farsikeyboardpopup'>
+									کیبورد خود را در حالت انگلیسی قرار دهید.
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12 register-btn">
+								<button ng-click="login(loginuser.phoneNumber,loginuser.password)" ng-disabled="check_login_form() || logining" class="btn btn-success">ورود</button>
+								<button ng-disabled="logining" data-dismiss="modal" class="btn btn-default">انصراف</button>
+							</div>
+							<div class="other-state">
+								<p><a href="" ng-click="toggleForgot()">اگر رمز عبور خود را فراموش نموده اید کلیک کنید</a></p>
+							</div>
+						</div>
+						<div class="small-load" ng-if = "logining">
+							<div class="sk-circle">
+								<div class="sk-circle1 sk-child"></div>
+								<div class="sk-circle2 sk-child"></div>
+								<div class="sk-circle3 sk-child"></div>
+								<div class="sk-circle4 sk-child"></div>
+								<div class="sk-circle5 sk-child"></div>
+								<div class="sk-circle6 sk-child"></div>
+								<div class="sk-circle7 sk-child"></div>
+								<div class="sk-circle8 sk-child"></div>
+								<div class="sk-circle9 sk-child"></div>
+								<div class="sk-circle10 sk-child"></div>
+								<div class="sk-circle11 sk-child"></div>
+								<div class="sk-circle12 sk-child"></div>
+							</div>
+						</div>
+					</form>
+					<div ng-if="welcome!=''" class="welcome modal-body">
+						<div class="h4">{{welcome}}</div>
+						<a data-dismiss="modal" class="btn btn-default">بستن</a>
+						<a data-dismiss="modal" ui-sref="profile.personal" ng-click="go_to_profile()" class="btn btn-info">مشاهده پروفایل</a>
+					</div>
+				</div>
+				<div class="modal-content" ng-if="forget==true">
+					<div class="modal-header">
+						<button type="button" class="close pull-left" data-dismiss="modal">&times;</button>
+						<div class="h4 modal-title">فراموشی رمز عبور</div>
+					</div>
+					<form ng-if="!updated" id="forgetForm" class="form-horizontal registerForm modal-body" name="forgetForm" >
+						<div class="form-group">
+							<label for="cell" class="col-sm-4 col-xs-4 control-label">شماره موبایل</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control phone" name="cell" placeholder="09*********" ng-model="forgot.phoneNumber" englishp-num="forgot.phoneNumber" ng-class="{'invalid':forgetForm.cell.$invalid}">
+							</div>
+						</div>
+						<div ng-if="code_sent" class="form-group">کد بازیابی از طریق پیامک به شما ارسال میگردد. لطفا شکیبا باشید...</div>
+						<div ng-if="code_sent" class="form-group">
+							<label class="col-sm-4 col-xs-4 control-label">کد بازیابی</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control" name="vcode" ng-model="forgot.verifyCode">
+							</div>
+						</div>
+						<div ng-if="code_sent">
+							<div class="form-group" >
+								<label for="password" class="col-sm-4 col-xs-4 control-label">رمز عبور جدید</label>
+								<div class="col-sm-8 col-xs-8">
+									<input ng-if="showPass" type="text" class="form-control" id="pwd1" name="pwd1" onpaste="return false;" placeholder="رمز عبور" pw-ch="passwd2" ng-model="forgot.newPassword" english-num="forgot.newPassword">
+									<input ng-if="!showPass" type="password" class="form-control" id="pwd1" name="pwd1" onpaste="return false;" placeholder="رمز عبور" pw-ch="passwd2" ng-model="forgot.newPassword" english-num="forgot.newPassword">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="password" class="col-sm-4 col-xs-4 control-label">تکرار رمز عبور جدید</label>
+								<div class="col-sm-8 col-xs-8">
+									<input ng-if="showPass" type="text" class="form-control" id="passwd2" name="passwd2" onpaste="return false;" placeholder="رمز عبور" pw-ch="pwd1" ng-model="t.passwd2" english-num="t.passwd2">
+									<input ng-if="!showPass" type="password" class="form-control" id="passwd2" name="passwd2" onpaste="return false;" placeholder="رمز عبور" pw-ch="pwd1" ng-model="t.passwd2" english-num="t.passwd2">
+									<div>
+										<input type="checkbox" name="showPass" ng-model="showPass"> نمایش رمز عبور <span class='msg-block msg-error' ng-show='t.errorfpass==true'>{{t.errMessage5}}&nbsp
+										</span>
+										<span class='msg-block msg-error' ng-show='farsikeyboardpopup'>
+										کیبورد خود را در حالت انگلیسی قرار دهید.
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-12 register-btn">
+								<button ng-if="code_sent" ng-click="setNewPass()" ng-disabled="check_forgot_form() || forgetForm.cell.$invalid || sending" class="btn btn-success">تایید</button>
+								<button ng-if="!code_sent" ng-click="forgotPass()" ng-disabled="!forgot.phoneNumber || forgetForm.cell.$invalid || sending" class="btn btn-success">تایید</button>
+								<button ng-disabled="sending" data-dismiss="modal" class="btn btn-default" ng-click="toggleForgot()">انصراف</button>
+								<span ng-if="code_sent && !resend_allowed"> شما می توانید {{counter}} ثانیه دیگر درخواست ارسال مجدد کد نمایید.</span>
+								<button ng-if="code_sent && resend_allowed" class="btn btn-info" ng-disabled="!forgot.phoneNumber || forgetForm.cell.$invalid || sending" ng-click="forgotPass()">ارسال مجدد کد</button>
+							</div>
+							<div class="text-center">
+								<span class='msg-block msg-error' ng-show='error5'>
+								 {{errMessage5}}
+								</span>
+							</div>
+						</div>
+						<div class="small-load" ng-if = "sending">
+							<div class="sk-circle">
+								<div class="sk-circle1 sk-child"></div>
+								<div class="sk-circle2 sk-child"></div>
+								<div class="sk-circle3 sk-child"></div>
+								<div class="sk-circle4 sk-child"></div>
+								<div class="sk-circle5 sk-child"></div>
+								<div class="sk-circle6 sk-child"></div>
+								<div class="sk-circle7 sk-child"></div>
+								<div class="sk-circle8 sk-child"></div>
+								<div class="sk-circle9 sk-child"></div>
+								<div class="sk-circle10 sk-child"></div>
+								<div class="sk-circle11 sk-child"></div>
+								<div class="sk-circle12 sk-child"></div>
+							</div>
+						</div>
+					</form>
+					<div ng-if="updated" class="welcome modal-body">
+						<div class="h4">رمز عبور به روز رسانی شد</div>
+						<p>با استفاده از شماره موبایل و رمز عبور جدید خود وارد سیستم شوید.</p>
+						<a data-dismiss="modal" ng-click="toggleForgot()" class="btn btn-default">بستن</a>
+						<a ng-click="toggleForgot()" class="btn btn-info">ورود</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog" role="dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close pull-left" data-dismiss="modal">&times;</button>
+						<div class="h4 modal-title">کاربر جدید (ثبت نام)</div>
+					</div>
+					<form ng-if="welcome==''" id="registerForm" class="form-horizontal registerForm modal-body" name="registerForm" autocomplete="off">
+						<div class="form-group">
+							<label for="cell" class="col-sm-4 col-xs-4 control-label">شماره موبایل</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control phone" name="cell" placeholder="09*********" ng-model="reguser.phoneNumber"  englishp-num="reguser.phoneNumber" ng-class="{'invalid':registerForm.cell.$invalid}">
+								
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="cell" class="col-sm-4 col-xs-4 control-label">نام</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control" id="cell" placeholder="نام" ng-model="reguser.firstName" ng-change="t.error1 = false;">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="cell" class="col-sm-4 col-xs-4 control-label">نام خانوادگی</label>
+							<div class="col-sm-8 col-xs-8">
+								<input type="text" class="form-control" id="cell" placeholder="نام خانوادگی" ng-model="reguser.lastName" ng-change="t.error1 = false;">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-4 col-xs-4 control-label">رمز عبور</label>
+							<div class="col-sm-8 col-xs-8">
+								<input ng-show="showPass" type="text" class="form-control" onpaste="return false;" id="password1" pw-check="password2" name="password1" placeholder="رمز عبور" ng-model="reguser.password" english-num="reguser.password">
+								<input ng-show="!showPass" type="password" class="form-control" onpaste="return false;" id="password1" pw-check="password2" name="password1" placeholder="رمز عبور" ng-model="reguser.password" english-num="reguser.password">
+								
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password2" class="col-sm-4 col-xs-4 control-label">تکرار رمز عبور</label>
+							<div class="col-sm-8 col-xs-8">
+								<input ng-show="showPass" type="text" onpaste="return false;" class="form-control" id="password2" name="password2" pw-check="password1" placeholder="رمز عبور" ng-model="pass2" english-num="pass2">
+								<input ng-show="!showPass" type="password" onpaste="return false;" class="form-control" id="password2" name="password2" pw-check="password1" placeholder="رمز عبور" ng-model="pass2" english-num="pass2">
+								<input type="checkbox" name="showPass" ng-model="showPass"> نمایش رمز عبور 
+							</div>
+							
+						</div>
+						<div class="form-group">
+							<div class="register-btn col-sm-12">
+								<button ng-click="register(registerForm.cell.$invalid);" ng-disabled="check_form() || registering" class="btn btn-success">ثبت اطلاعات</button>
+								<button ng-disabled="registering" data-dismiss="modal" class="btn btn-default">انصراف</button>
+							</div>
+						</div>
+						<div>
+							<span class='msg-block msg-error' ng-show='t.error1 && pass2'>{{errMessage1}}&nbsp
+							</span>
+							<span class='msg-block msg-error' ng-show='farsikeyboardpopup'>
+							کیبورد خود را در حالت انگلیسی قرار دهید.
+							</span>
+						</div>
+						<div class='msg-block' ng-show='error2'>
+							<span class='msg-error'>{{errMessage2}}</span>
+						</div>
+						<div class="small-load" ng-if="registering">
+							<div class="sk-circle">
+								<div class="sk-circle1 sk-child"></div>
+								<div class="sk-circle2 sk-child"></div>
+								<div class="sk-circle3 sk-child"></div>
+								<div class="sk-circle4 sk-child"></div>
+								<div class="sk-circle5 sk-child"></div>
+								<div class="sk-circle6 sk-child"></div>
+								<div class="sk-circle7 sk-child"></div>
+								<div class="sk-circle8 sk-child"></div>
+								<div class="sk-circle9 sk-child"></div>
+								<div class="sk-circle10 sk-child"></div>
+								<div class="sk-circle11 sk-child"></div>
+								<div class="sk-circle12 sk-child"></div>
+							</div>
+						</div>
+					</form>
+					<div ng-if="welcome!=''" class="welcome modal-body">
+						<div class="h4">{{welcome}}</div>
+						<p>از اینکه در بیمیتو ثبت نام نمودید سپاسگزاریم.</p>
+						<a data-dismiss="modal" class="btn btn-default">بستن</a>
+						<a data-dismiss="modal" ui-sref="profile.personal" ng-click="go_to_profile()" class="btn btn-info">مشاهده پروفایل</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-if="nocookie" class="alert-container" ng-cloak>
+			<div class="alert alert-danger alert-dismissible" role="alert">
+				این سایت برای انجام عملیات خرید بیمه از کوکی استفاده می کند. لطفا کوکی خود را فعال نمایید.
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="clear_nocookie()"><span aria-hidden="true">&times;</span></button>
+				<button class="btn btn-default pull-left" ng-click="showmore=true">چه مواردی ذخیره میشود و چرا؟</button>
+				<br>
+				<br>
+				<div ng-show="showmore">
+					<p>
+						بیمیتو اطلاعات شما را در فضایی به نام کوکی ذخیره میکند. این اطلاعات شامل مواردی همچون مشخصات اتومبیل و بیمه ی انتخابی شماست تا در صورت تازه سازی صفحه وب، مجبور به ورود مجدد اطلاعات نباشید.
+					</p>
+					<p>
+						<strong>شما همچنان میتوانید بدون فعالسازی کوکی از سایت بیمیتو استفاده نمایید،</strong> فقط توجه داشته باشید در تمام مراحل خرید صفحه را تازه سازی نکنید و پس از پایان خرید مجددا با شماره موبایل و رمز عبور خود، وارد سیستم شوید. در این حالت ممکن است برخی از امکانات سایت بیمیتو طبق انتظار کار نکنند.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div ng-if="orgMessage" class="alert-container" ng-cloak>
+			<div class="alert alert-warning alert-dismissible" role="alert">
+				{{orgMessage}}
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="clear_error()"><span aria-hidden="true">&times;</span></button>
+			</div>
+		</div>
+		
+		<div ui-view></div>
+		<script type="text/javascript" src="js/ng-jalaali-flat-datepicker.min.js" defer></script>
+		<script type="text/javascript" src="js/angular-route.min.js" defer></script>
+		<script type="text/javascript" src="js/angular-ui-router.min.js" defer></script>
+		<script type="text/javascript" src="js/angular-resource.min.js" defer></script>
+		<script src="js/rzslider.min.js" defer></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script> -->
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/wow.min.js"></script>
+		<script type="text/javascript" src="js/angular-filereader.js" defer></script>
+		<script type="text/javascript" src="js/slick-carousel.js" defer></script>
+		<script type="text/javascript" src="js/slick.min.js" defer></script>
+		<script type="text/javascript" src="js/ngStorage.min.js" defer></script>
+		<script type="text/javascript" src="js/ng-image-compress.js" defer></script>
+		<script type="text/javascript" src="js/angular-seo.js" defer></script>
+		<script type="text/javascript" src="js/angulartics.js" defer></script>
+		<script type="text/javascript" src="js/angulartics-ga.min.js" defer></script>
+		<script defer> var app = angular.module('imgUploader', []); </script>
+		<script type="text/javascript" src="js/upload.js" defer></script>
+		<script type="text/javascript" src="js/browser.js" defer></script>
+		<script type="text/javascript" src="js/anchor.js" defer></script>
+		<script type="text/javascript" src="app/resources/urls-1.0.4.js" defer></script>
+		<script type="text/javascript" src="app/resources/data-1.0.4.js" defer></script>
+		<script type="text/javascript" src="app/resources/moreinfo-1.0.5.js" defer></script>
+		<script type="text/javascript" src="app/ng-app-routes-1.0.6.js" defer></script>
+		<script type="text/javascript" src="app/resources/thirdParty-1.0.4.js" defer></script>
+		<script type="text/javascript" src="app/resources/carBody-1.0.3.js" defer></script>
+		<script type="text/javascript" src="app/resources/fire-1.0.3.js" defer></script>
+		<script type="text/javascript" src="app/resources/profile-1.0.6.js" defer></script>
+		<script type="text/javascript" src="app/resources/travel-1.0.0.js" defer></script>
+		<script type="text/javascript" src="app/ng-app-1.0.7.js" defer></script>
+		<!-- <script async src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script> -->
+		<script async src="js/firebase.js"></script>
+		<!-- Plugin JavaScript -->
+	    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+	    <!-- Contact Form JavaScript -->
+	    <script src="js/intro/jqBootstrapValidation.js"></script>
+	    <script src="js/intro/contact_me.js"></script>
+
+	    <!-- Theme JavaScript -->
+	    <script src="js/intro/agency.min.js"></script>
+	    <!-- Introjs -->
+	    <script src="js/intro/intro.js"></script>
+		<script defer>
+			new WOW().init();
+		</script>
+	</body>
+</html>

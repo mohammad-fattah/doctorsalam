@@ -1,0 +1,1 @@
+[05-May-2020 09:16:20 Asia/Tehran] PHP Fatal error:  Call to a member function result() on boolean in /home/hadafsaz/public_html/moderator/application/hooks/init_settings.php on line 6

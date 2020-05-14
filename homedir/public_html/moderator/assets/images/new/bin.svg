@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" style="" xml:space="preserve"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+
+<g class="currentLayer" style=""><title>Layer 1</title><g id="Frame_-_24px">
+	<rect style="fill: none;" width="24" height="24" id="svg_1"/>
+</g><g id="Line_Icons" class="selected" fill-opacity="1" fill="#fefefe">
+	<g id="svg_2" fill="#fefefe">
+		<path style="" d="M5,20c0,1.103,0.897,2,2,2h10c1.103,0,2-0.897,2-2V8H5V20z M7,10h10l0.001,10H7V10z" id="svg_3" fill="#fefefe"/>
+		<polygon style="" points="15,5 15,3 9,3 9,5 3,5 3,7 21,7 21,5   " id="svg_4" fill="#fefefe"/>
+		<rect x="9" y="12" style="" width="2" height="6" id="svg_5" fill="#fefefe"/>
+		<rect x="13" y="12" style="" width="2" height="6" id="svg_6" fill="#fefefe"/>
+	</g>
+</g></g></svg>

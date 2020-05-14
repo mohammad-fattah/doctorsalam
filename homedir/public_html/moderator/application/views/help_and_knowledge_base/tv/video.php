@@ -1,0 +1,183 @@
+
+<?php
+$this->load->view("includes/summernote");
+?>
+
+<div id="page-content" class="clearfix p20">
+    <?php echo form_open_multipart(get_uri("videos/save_video"), array("id" => "article-form", "class" => "general-form", "role" => "form")); ?>
+    <div class="panel view-container">
+        <div class="panel-default" style="background-color:#fff">
+            <div class="page-title clearfix">
+                
+
+                <?php if ($model_info->id) { ?>
+                    <h1><?php echo lang('edit_video') . " (" . lang($type) . ")"; ?></h1>
+                    <div class="title-button-group">
+                        <?php echo anchor(get_uri("help/view/" . $model_info->id), "<i class='fa fa-external-link-square'></i> " . lang('view'), array("class" => "btn btn-default", "title" => lang('view'))); ?>
+                        <?php echo anchor(get_uri("help/article_form/" . $type), "<i class='fa fa-plus-circle'></i> " . lang('add_video'), array("class" => "btn btn-default", "title" => lang('add_video'))); ?>
+                    </div>
+                <?php } else { ?>
+                    <h1><?php echo lang('add_video') . " (" . lang($type) . ")"; ?></h1>
+                <?php } ?>
+            </div>
+
+            <div class="panel-body">
+	<?php echo $error; ?>
+
+                <input type="hidden" name="id" value="<?php echo $model_info->id; ?>" />
+                <input type="hidden" name="type" value="<?php echo $type; ?>" />
+
+                <div class="form-group">
+                    <label for="title" class="col-md-12"><?php echo lang('title'); ?></label>
+                    <div class=" col-md-12">
+                        <?php
+                        echo form_input(array(
+                            "id" => "title",
+                            "name" => "title",
+                            "value" => $model_info->video_title,
+                            "class" => "form-control",
+                            "placeholder" => lang('title'),
+                            "autofocus" => true,
+                            "data-rule-required" => true,
+                            "data-msg-required" => lang("field_required"),
+                        ));
+                        ?>
+                    </div>
+                </div>
+           <!-- input yt_length -->
+                <div class="form-group">
+                    <label for="title" class="col-md-12"><?php echo lang('yt_length'); ?></label>
+                    <div class=" col-md-12">
+                        <?php
+                        echo form_input(array(
+                            "id" => "yt_length",
+                            "name" => "yt_length",
+                            "value" => $model_info->yt_length,
+                            "class" => "form-control",
+                            "placeholder" => lang('yt_length'),
+                            "autofocus" => true,
+                            "data-rule-required" => true,
+                            "data-msg-required" => lang("field_required"),
+                        ));
+                        ?>
+                    </div>
+                </div>
+            <!-- end input yt_length                                 -->
+
+            <!-- input video_slug -->
+                <div class="form-group">
+                    <label for="title" class="col-md-12"><?php echo lang('video_slug_description'); ?></label>
+                    <div class=" col-md-12">
+                        <?php
+                        echo form_input(array(
+                            "id" => "video_slug",
+                            "name" => "video_slug",
+                            "value" => $model_info->video_slug,
+                            "class" => "form-control",
+                            "placeholder" => lang('video_slug'),
+                            "autofocus" => true,
+                            "data-rule-required" => true,
+                            "data-msg-required" => lang("field_required"),
+                        ));
+                        ?>
+                    </div>
+                </div>
+            <!-- end input video_slug                                 -->
+            
+
+            <!-- input description -->
+                <div class="form-group">
+
+                    <div class=" col-md-12">
+                        <?php
+                        echo form_textarea(array(
+                            "id" => "description",
+                            "name" => "description",
+                            "value" => $model_info->description,
+                            "placeholder" => lang('description'),
+                            "class" => "form-control"
+                        ));
+                        ?>
+                    </div>
+                </div>
+            <!--end input description -->
+            <!-- input status -->
+                <div class="form-group">
+                    <div class=" col-md-12">
+                        <?php
+                        echo form_radio(array(
+                            "id" => "status_active",
+                            "name" => "status",
+                            "data-msg-required" => lang("field_required"),
+                                ), "active", ($model_info->status === "active") ? true : ($model_info->status !== "inactive") ? true : false);
+                        ?>
+                        <label for="status_active" class="mr15"><?php echo lang('active'); ?></label>
+                        <?php
+                        echo form_radio(array(
+                            "id" => "status_inactive",
+                            "name" => "status",
+                            "data-msg-required" => lang("field_required"),
+                                ), "inactive", ($model_info->status === "inactive") ? true : false);
+                        ?>
+                        <label for="status_inactive" class=""><?php echo lang('inactive'); ?></label>
+                    </div>
+                </div>
+			<!-- end input status	 -->
+				<!-- file upload -->
+                <!-- video -->
+                <label for="status_inactive" class="">آپلود ویدئو</label>
+                    <?php
+                        echo form_upload('userfile');
+                    ?>
+                <!-- poster picture -->
+                <label for="status_inactive" class="">آپلود پوستر</label>                    
+                    <?php
+                        echo form_upload('user_poster_file');
+                    ?>                         
+				<!--end file upload -->
+
+
+
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-primary"><span class="fa fa-check-circle"></span>ذخیره</button>
+            </div>
+        </div>
+
+        <?php echo form_close(); ?>
+    </div> 
+</div> 
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#article-form").appForm({
+            ajaxSubmit: false
+        });
+        $("#title").focus();
+        initWYSIWYGEditor("#description", {
+            height: 250,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['table', ['table']],
+                ['insert', ['hr', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview']]
+            ],
+            onImageUpload: function (files, editor, welEditable) {
+                //insert image url
+            },
+            lang: "<?php echo lang('language_locale_long'); ?>"
+        });
+
+
+        $("#category_id").select2();
+    });
+
+
+</script>

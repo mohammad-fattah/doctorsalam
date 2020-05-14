@@ -1,0 +1,254 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "wiki";
+  src:url("../fonts/wiki.eot");
+  src:url("../fonts/wiki.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/wiki.woff") format("woff"),
+    url("../fonts/wiki.ttf") format("truetype"),
+    url("../fonts/wiki.svg#wiki") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "wiki" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="i-"]:before,
+[class*=" i-"]:before {
+  font-family: "wiki" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.subBoxList {
+    margin-top: -20px;
+    text-align: right;
+    padding: 15px 0;
+    border-radius: 4px;
+    display: block;
+    background-color: #ffffff;
+    box-shadow: 0 1px 11px 0 rgba(164, 164, 164, 0.21);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+.i-stars:before {
+  content: "\63";
+}
+.i-music:before {
+  content: "\64";
+}
+.i-video:before {
+  content: "\65";
+}
+.i-movie:before {
+  content: "\66";
+}
+.i-home:before {
+  content: "\61";
+}
+.i-play-list:before {
+  content: "\62";
+}
+.i-user-avatar:before {
+  content: "\68";
+}
+.i-search:before {
+  content: "\69";
+}
+.i-cart:before {
+  content: "\67";
+}
+.i-down-arrow:before {
+  content: "\6a";
+}
+.i-left-arrow:before {
+  content: "\6b";
+}
+.i-up-arrow:before {
+  content: "\6c";
+}
+.i-right-arrow:before {
+  content: "\6d";
+}
+.i-music-player-play:before {
+  content: "\6e";
+}
+.i-play-button:before {
+  content: "\6f";
+}
+.i-power:before {
+  content: "\71";
+}
+.i-cancel:before {
+  content: "\70";
+}
+.i-checked:before {
+  content: "\72";
+}
+.i-plus-symbol:before {
+  content: "\73";
+}
+.i-star:before {
+  content: "\74";
+}
+.i-plus:before {
+  content: "\75";
+}
+.i-list:before {
+  content: "\76";
+}
+.i-download:before {
+  content: "\77";
+}
+.i-music-1:before {
+  content: "\78";
+}
+.i-android:before {
+  content: "\79";
+}
+.i-apple:before {
+  content: "\7a";
+}
+.i-facebook:before {
+  content: "\41";
+}
+.i-aparat:before {
+  content: "\42";
+}
+.i-telegram:before {
+  content: "\43";
+}
+.i-noun-469424-cc:before {
+  content: "\44";
+}
+.i-link:before {
+  content: "\45";
+}
+.i-empty-white-box:before {
+  content: "\46";
+}
+.i-view:before {
+  content: "\47";
+}
+.i-calendar:before {
+  content: "\48";
+}
+.i-play-button-1:before {
+  content: "\49";
+}
+.i-locked:before {
+  content: "\4a";
+}
+.i-padlock:before {
+  content: "\4b";
+}
+.i-equalizer:before {
+  content: "\4c";
+}
+.i-mute:before {
+  content: "\4d";
+}
+.i-pause-button:before {
+  content: "\4e";
+}
+.i-speaker-with-waves:before {
+  content: "\4f";
+}
+.i-circular-arrow:before {
+  content: "\50";
+}
+.i-musical-note:before {
+  content: "\52";
+}
+.i-musical-note-1:before {
+  content: "\53";
+}
+.i-fast-forward-button:before {
+  content: "\54";
+}
+.i-video-camera:before {
+  content: "\55";
+}
+.i-vdeo-cmera:before {
+  content: "\56";
+}
+.i-backward-button:before {
+  content: "\57";
+}
+.i-stop:before {
+  content: "\51";
+}
+.i-user-close-up:before {
+  content: "\58";
+}
+.i-download-arrow-1:before {
+  content: "\59";
+}
+.i-email:before {
+  content: "\5a";
+}
+.i-doc-text-inv:before {
+  content: "\30";
+}
+.i-phone:before {
+  content: "\31";
+}
+.i-speech-bubble-1:before {
+  content: "\32";
+}
+.i-view-1:before {
+  content: "\33";
+}
+.i-full:before {
+  content: "\34";
+}
+.i-share:before {
+  content: "\35";
+}
+.i-shop:before {
+  content: "\36";
+}
+.i-unlock-alt:before {
+  content: "\37";
+}
+.i-mobile:before {
+  content: "\38";
+}
+.i-039-error:before {
+  content: "\39";
+}
+.i-050-checked:before {
+  content: "\21";
+}
+.i-mobile-store:before {
+  content: "\22";
+}
+.i-credit-card:before {
+  content: "\23";
+}
+.i-google-plus:before {
+  content: "\24";
+}
+.i-play-button-1-1:before {
+  content: "\25";
+}
+.i-foreign:before {
+  content: "\26";
+}

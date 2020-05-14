@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" style="" xml:space="preserve"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+
+
+<g class="currentLayer" style=""><title>Layer 1</title><g id="Frame_-_24px">
+	<rect style="fill: none;" width="24" height="24" id="svg_1"/>
+</g><g id="Line_Icons" class="selected" fill-opacity="1" fill="#fefefe">
+	<g id="svg_2" fill="#fefefe">
+		<path style="" d="M23.632,19.734L22,14.837V3c0-0.552-0.448-1-1-1H3C2.448,2,2,2.447,2,3v11.837l-1.632,4.897    c-0.186,0.558-0.11,1.131,0.208,1.571C0.893,21.747,1.412,22,2,22h20c0.588,0,1.107-0.253,1.425-0.694    C23.743,20.865,23.818,20.292,23.632,19.734z M20,4v10H4V4H20z M2.388,20l1.333-4h16.559l1.333,4H2.388z" id="svg_3" fill="#fefefe"/>
+		<circle style="" cx="12" cy="7" r="2" id="svg_4" fill="#fefefe"/>
+		<path style="" d="M12,9c-2.209,0-4,1.791-4,4h8C16,10.791,14.209,9,12,9z" id="svg_5" fill="#fefefe"/>
+		<rect x="10" y="17" style="" width="4" height="2" id="svg_6" fill="#fefefe"/>
+	</g>
+</g></g></svg>

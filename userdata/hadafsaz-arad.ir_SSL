@@ -1,0 +1,18 @@
+--- 
+documentroot: /home/hadafsaz/public_html
+group: hadafsaz
+hascgi: 1
+homedir: /home/hadafsaz
+ip: 89.39.208.70
+ipv6: ~
+owner: rescpanel25
+phpopenbasedirprotect: ~
+port: 443
+secruleengineoff: ~
+serveradmin: webmaster@hadafsaz-arad.ir
+serveralias: mail.hadafsaz-arad.ir www.hadafsaz-arad.ir
+servername: hadafsaz-arad.ir
+ssl: 1
+usecanonicalname: 'Off'
+user: hadafsaz
+userdirprotect: ''

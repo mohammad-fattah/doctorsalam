@@ -1,0 +1,607 @@
+# Webalizer V2.23-08 Incremental Data - 05/13/2020 16:11:35
+2020 5 13 16 11 35
+179 0 111 0 34 37 203003 80 65 0
+6 1 34 1 13
+16 0 18336 13 4 3
+8 0 9176 5 3 3
+11 0 12617 11 4 4
+6 0 6882 4 3 3
+10 0 10323 10 5 5
+10 0 11470 10 2 2
+23 0 26381 18 10 10
+42 0 47027 10 21 7
+20 0 22940 17 11 11
+8 0 9176 7 3 3
+10 0 11470 9 5 5
+9 0 10323 9 6 6
+6 0 6882 6 3 3
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+9 0 10315 3
+10 0 11462 5
+8 0 9176 3
+35 0 40145 17
+11 0 12617 5
+3 0 3441 2
+3 0 3441 1
+7 0 6882 4
+4 0 4588 1
+4 0 4588 4
+4 0 4588 2
+4 0 4588 2
+4 0 4588 1
+13 0 14911 4
+3 0 3441 0
+4 0 4588 2
+16 0 18352 7
+5 0 5735 3
+3 0 3441 0
+6 0 6882 4
+6 0 5735 3
+5 0 5735 2
+4 0 4588 2
+8 0 9176 3
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+177
+0
+0
+0
+0
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+# End Of Table - urls
+# -sites- (monthly)
+178-154-200-196.spider.yandex.com
+0 1 0 1147 0 0
+-
+ip-148-72-126-224.ip.secureserver.net
+0 1 0 1147 0 0
+-
+premium64.web-hosting.com
+0 1 0 1147 0 0
+-
+host118-109-46-89.serverdedicati.aruba.it
+0 1 0 1147 0 0
+-
+crawl-66-249-70-24.googlebot.com
+0 1 0 1147 0 0
+-
+sg2plcpnl0196.prod.sin2.secureserver.net
+0 1 0 1147 0 0
+-
+139.224.132.45
+0 2 0 2294 0 0
+-
+server-46.45.185.170.as42926.net
+0 1 0 1147 1 1589275355
+-
+msnbot-40-77-167-87.search.msn.com
+0 1 0 1147 1 1589159461
+-
+pl101-gra2.hostingpanel2.com
+0 1 0 1147 1 1588867749
+-
+msnbot-207-46-13-73.search.msn.com
+0 1 0 1147 1 1588813582
+-
+li120-42.members.linode.com
+0 1 0 1147 1 1589165097
+-
+64.225.22.207
+0 1 0 1147 1 1588735940
+-
+137.116.60.104
+0 1 0 1147 1 1588472861
+-
+worker-07.sfj.corp.censys.io
+0 1 0 1147 1 1588966692
+-
+msnbot-157-55-39-136.search.msn.com
+0 1 0 1147 1 1588720816
+-
+static.105.118.217.95.clients.your-server.de
+0 1 0 1147 1 1589015420
+-
+178-154-200-133.spider.yandex.com
+0 1 0 1147 1 1588695047
+-
+ec2-3-234-183-193.compute-1.amazonaws.com
+0 1 0 1147 1 1589356326
+-
+23-29-122-186.static.hvvc.us
+0 1 0 1147 0 0
+-
+msnbot-207-46-13-139.search.msn.com
+0 1 0 1147 1 1589301999
+-
+standard14.doveserver.com
+0 1 0 1147 0 0
+-
+5.200.72.182
+0 1 0 1147 1 1588695556
+-
+a2plcpnl0023.prod.iad2.secureserver.net
+0 1 0 1147 0 0
+-
+178-154-200-71.spider.yandex.com
+0 1 0 1147 1 1588481876
+-
+199.244.88.132
+0 1 0 1147 1 1589227352
+-
+r-107-61-62-5.consumer-pool.prcdn.net
+0 1 0 0 1 1588970883
+-
+br34.valueserver.com.br
+0 1 0 1147 0 0
+-
+s321.syd1.hostingplatform.net.au
+0 1 0 1147 0 0
+-
+msnbot-207-46-13-168.search.msn.com
+0 1 0 1147 1 1589343595
+-
+msnbot-157-55-39-30.search.msn.com
+0 9 0 10323 0 0
+-
+msnbot-207-46-13-82.search.msn.com
+0 2 0 2294 2 1589000969
+-
+45.77.18.104.vultr.com
+0 1 0 1147 0 0
+-
+msnbot-207-46-13-179.search.msn.com
+0 5 0 5735 0 0
+-
+no-mans-land.m247.com
+0 1 0 1147 0 0
+-
+13.92.235.114
+0 1 0 1147 0 0
+-
+70.42.131.189
+0 1 0 1147 1 1589361736
+-
+66-165-231-114.static.hvvc.us
+0 1 0 1147 0 0
+-
+ip-148-72-192-64.ip.secureserver.net
+0 1 0 1147 0 0
+-
+nltrademate.nl
+0 1 0 1147 0 0
+-
+msnbot-207-46-13-111.search.msn.com
+0 1 0 1147 1 1588906262
+-
+165.22.53.233
+0 1 0 1147 0 0
+-
+srv2.hizhosting.com
+0 1 0 1147 0 0
+-
+msnbot-157-55-39-170.search.msn.com
+0 2 0 2294 2 1588458488
+-
+68.183.179.184
+0 1 0 1147 1 1589004295
+-
+120.27.125.74
+0 1 0 1147 0 0
+-
+msnbot-207-46-13-40.search.msn.com
+0 2 0 2294 2 1588674682
+-
+premium24.web-hosting.com
+0 2 0 2294 0 0
+-
+ec2-18-219-195-239.us-east-2.compute.amazonaws.com
+0 1 0 1147 0 0
+-
+167.71.117.147
+0 1 0 1147 1 1588857491
+-
+msnbot-157-55-39-6.search.msn.com
+0 3 0 3441 0 0
+-
+178-154-200-109.spider.yandex.com
+0 1 0 1147 0 0
+-
+n3plcpnl0100.prod.ams3.secureserver.net
+0 1 0 1147 0 0
+-
+185.86.93.35
+0 32 0 36704 1 1588908773
+-
+msnbot-207-46-13-157.search.msn.com
+0 2 0 2294 2 1589246520
+-
+pirates-forum.org
+0 1 0 1147 1 1588849142
+-
+msnbot-157-55-39-210.search.msn.com
+0 5 0 5735 1 1588864745
+-
+ec2-3-94-148-194.compute-1.amazonaws.com
+0 1 0 1147 1 1588837685
+-
+a2plcpnl0177.prod.iad2.secureserver.net
+0 1 0 1147 0 0
+-
+mocha6005.mochahost.com
+0 1 0 1147 0 0
+-
+classic.cleannameservers.com
+0 1 0 1147 0 0
+-
+zuim.de
+0 1 0 1147 1 1588841651
+-
+li1137-68.members.linode.com
+0 1 0 1147 1 1589062699
+-
+maildc1519216958.mihandns.com
+0 1 0 1147 0 0
+-
+ec2-3-235-42-64.compute-1.amazonaws.com
+0 1 0 1147 1 1588913888
+-
+crawl-66-249-70-11.googlebot.com
+0 2 0 2294 1 1589111440
+-
+msnbot-40-77-167-2.search.msn.com
+0 1 0 1147 1 1589066547
+-
+msnbot-157-55-39-10.search.msn.com
+0 3 0 3441 1 1588361454
+-
+42.243.30.11
+0 1 0 1147 0 0
+-
+209.208.79.248
+0 1 0 1147 1 1589318970
+-
+rainfall.guzel.net.tr
+0 1 0 1147 0 0
+-
+msnbot-40-77-167-42.search.msn.com
+0 1 0 1147 1 1588770870
+-
+msnbot-40-77-167-191.search.msn.com
+0 1 0 1147 1 1588870615
+-
+h2884351.stratoserver.net
+0 1 0 1147 1 1588440886
+-
+msnbot-157-55-39-17.search.msn.com
+0 1 0 1147 0 0
+-
+ns382403.ip-46-105-99.eu
+0 1 0 1147 0 0
+-
+cpls08.srvpanel.com
+0 1 0 1147 0 0
+-
+msnbot-40-77-167-195.search.msn.com
+0 1 0 1147 1 1588578819
+-
+167.172.122.46
+0 1 0 1147 1 1588811214
+-
+business16.web-hosting.com
+0 3 0 3441 0 0
+-
+crawl-66-249-70-20.googlebot.com
+0 1 0 1147 1 1588524632
+-
+n3plcpnl0039.prod.ams3.secureserver.net
+0 1 0 1147 0 0
+-
+111.7.100.18
+0 1 0 1147 1 1589053337
+-
+178-154-200-50.spider.yandex.com
+0 1 0 1147 1 1589258127
+-
+static.13.137.99.88.clients.your-server.de
+0 1 0 1147 1 1589023570
+-
+srv31.benzahosting.cl
+0 1 0 1147 0 0
+-
+103.147.10.222
+0 1 0 1147 0 0
+-
+win2iran.mylittledatacenter.com
+0 1 0 1147 0 0
+-
+msnbot-40-77-167-21.search.msn.com
+0 3 0 3425 2 1588309784
+-
+n3plcpnl0238.prod.ams3.secureserver.net
+0 1 0 1147 0 0
+-
+ec2-3-231-227-98.compute-1.amazonaws.com
+0 1 0 1147 1 1589155010
+-
+business63.web-hosting.com
+0 1 0 1147 0 0
+-
+45.77.44.100.vultr.com
+0 1 0 1147 0 0
+-
+a2plcpnl0715.prod.iad2.secureserver.net
+0 1 0 1147 0 0
+-
+242-79-162-69.static.reverse.lstn.net
+0 1 0 1147 0 0
+-
+server266.web-hosting.com
+0 1 0 1147 0 0
+-
+msnbot-40-77-167-90.search.msn.com
+0 3 0 3441 3 1589116577
+-
+static.136.4.251.148.clients.your-server.de
+0 2 0 2294 1 1588864569
+-
+104.238.174.40.vultr.com
+0 1 0 1147 1 1588906820
+-
+111.7.100.19
+0 1 0 1147 1 1589053298
+-
+cloud14.dechost.net
+0 1 0 1147 0 0
+-
+178-154-200-40.spider.yandex.com
+0 1 0 1147 0 0
+-
+client.m247.ro
+0 1 0 0 1 1588664642
+-
+ip-132-148-198-132.ip.secureserver.net
+0 1 0 1147 0 0
+-
+178-154-200-83.spider.yandex.com
+0 2 0 2294 1 1589170088
+-
+server34.flaunt7.com
+0 1 0 1147 0 0
+-
+cp212.zonasprivadasdns.com
+0 1 0 1147 0 0
+-
+dot26.dothome.co.kr
+0 2 0 2294 0 0
+-
+worker-02.sfj.corp.censys.io
+0 1 0 1147 1 1589299680
+-
+ec2-54-207-33-42.sa-east-1.compute.amazonaws.com
+0 1 0 1147 1 1589046333
+-
+65.154.226.109
+0 2 0 2294 2 1589054406
+-
+# End Of Table - sites (monthly)
+# -sites- (daily)
+ec2-3-234-183-193.compute-1.amazonaws.com
+0 1 0 1147 1 1589356326
+-
+msnbot-207-46-13-168.search.msn.com
+0 1 0 1147 1 1589343595
+-
+msnbot-157-55-39-30.search.msn.com
+0 1 0 1147 0 0
+-
+70.42.131.189
+0 1 0 1147 1 1589361736
+-
+ip-148-72-192-64.ip.secureserver.net
+0 1 0 1147 0 0
+-
+business63.web-hosting.com
+0 1 0 1147 0 0
+-
+# End Of Table - sites (daily)
+# -referrers- 
+http://hadafsaz-arad.ir/admin/cms/login/
+0 1
+http://hadafsaz-arad.ir/edc_admin/Login/Style.css
+0 1
+http://hadafsaz-arad.ir/robots.txt
+0 1
+http://hadafsaz-arad.ir/_eadmin/
+0 1
+http://hadafsaz-arad.ir/adm/
+0 1
+http://hadafsaz-arad.ir/login
+0 1
+http://hadafsaz-arad.ir/static/common.css
+0 1
+http://hadafsaz-arad.ir/resource/js/corelang.js
+0 1
+http://hadafsaz-arad.ir/modules
+0 1
+- (Direct Request)
+0 144
+http://hadafsaz-arad.ir/admin.php
+0 1
+http://hadafsaz-arad.ir/admin/textolite.css
+0 1
+http://hadafsaz-arad.ir/mscms/
+0 1
+http://www.bing.com/search
+0 3
+http://hadafsaz-arad.ir/
+0 1
+http://hadafsaz-arad.ir/indy/indy.css
+0 1
+http://hadafsaz-arad.ir/admin/view/javascript/common.js
+0 1
+http://hadafsaz-arad.ir/bc/
+0 1
+http://hadafsaz-arad.ir/ru/admin/login.html
+0 1
+http://hadafsaz-arad.ir/cms/lang/ru_utf8/css/sbIndex.css
+0 1
+http://hadafsaz-arad.ir/css/admin/layout.css
+0 1
+http://hadafsaz-arad.ir/skins/simpla_blue/style.css
+0 1
+http://hadafsaz-arad.ir/engine/classes/js/dle_js.js
+0 1
+http://hadafsaz-arad.ir/netcat/
+0 1
+http://hadafsaz-arad.ir/administrator
+0 1
+http://hadafsaz-arad.ir/scripts/admin/popup.js
+0 1
+http://hadafsaz-arad.ir/icms
+0 1
+http://hadafsaz-arad.ir/cms/
+0 1
+http://hadafsaz-arad.ir/adm/css/errors.css
+0 1
+http://hadafsaz-arad.ir/static/cartreminder.js
+0 1
+http://hadafsaz-arad.ir/etm/indy.css
+0 1
+http://hadafsaz-arad.ir/admin
+0 1
+http://hadafsaz-arad.ir/manager
+0 1
+http://hadafsaz-arad.ir/modules/mod_stats.xml
+0 1
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36
+0 2
+Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.71 Safari/537.36
+0 3
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.84 Safari/537.36
+0 1
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106
+0 1
+Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+0 2
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36
+0 1
+python-requests/2.23.0
+0 3
+Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+0 50
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+0 1
+Microsoft Office/16.0 (Windows NT 5.1; Microsoft Word 16.0.10827; Pro)
+0 2
+Poster
+0 15
+WordPress
+0 11
+Mozilla/5.0 (compatible; WebDataStats/1.0 ; +https://webdatastats.com/policy.html)
+0 32
+Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36
+0 1
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36
+0 2
+Mozilla/5.0 zgrab/0.x
+0 2
+Windows Live Writter
+0 12
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36
+0 1
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36
+0 1
+Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile S
+0 2
+Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+0 7
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36
+0 1
+\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36\"
+0 2
+Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0
+0 5
+Microsoft Office/16.0 (Windows NT 6.1; Microsoft Word 16.0.9330; Pro)
+0 1
+Microsoft Office/16.0 (Windows NT 10.0; Microsoft Word 16.0.11029; Pro)
+0 1
+Mozilla/5.0 (Macintosh;   Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML,   like Gecko) Chrome/45.0.2454.101 Safari/537.36
+0 1
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Safari/605.1.15
+0 1
+axios/0.19.2
+0 1
+\"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27\"
+0 4
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25
+0 1
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

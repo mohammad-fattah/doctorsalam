@@ -1,0 +1,34 @@
+; cPanel first:86.0.12 (update_time):1584357241 Cpanel::ZoneFile::VERSION:1.3 hostname:cp25.payforbuildings.top latest:86.0.12
+; Zone file for hadafsaz-arad.ir
+$TTL 14400
+hadafsaz-arad.ir.	14400	IN	SOA	ns331.mihanwebhost.com.	mihanspa.gmail.com.	(
+						2020031600 ;Serial Number
+						14400 ;refresh
+						130 ;retry
+						1209600 ;expire
+						14400	)
+
+hadafsaz-arad.ir.	14400	IN	NS	ns331.mihanwebhost.com.
+hadafsaz-arad.ir.	14400	IN	NS	ns332.mihanwebhost.com.
+
+
+hadafsaz-arad.ir.	14400	IN	A	89.39.208.70
+
+hadafsaz-arad.ir.	14400	IN	MX	0	mail.hadafsaz-arad.ir.
+
+mail	14400	IN	A	89.39.208.70
+www	14400	IN	CNAME	hadafsaz-arad.ir.
+ftp	14400	IN	A	89.39.208.70
+cpanel	14400	IN	A	89.39.208.70
+webdisk	14400	IN	A	89.39.208.70
+whm	14400	IN	A	89.39.208.70
+webmail	14400	IN	A	89.39.208.70
+cpcalendars	14400	IN	A	89.39.208.70
+cpcontacts	14400	IN	A	89.39.208.70
+default._domainkey	14400	IN	TXT	"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcCOC5PHbbncPwOTTbkjzYexT5TyZucYlvbycFBYbHal+ZxqPNHFuGrZSHGvWNc8GQEbbn3qztLhgH5Qi0jeqkuqBlvkaANWq2KYNfajuvjSIJzCXv3trLXKfPI4f5fwqHbeb8MLGGUcDRKiLoYbOf5GtdQ2gOHnjMkaNmNCY0KOI08WKi6JP/YENbmdwgE+h" nxe2wUnQVWwV0gjO8kFo/s4uXwluqrAF9cXBI17QK6PYBXOZtFgx4cHEQhRnF+6/JDoeR86xYCpWari+023XlkHBN9olb7a833yqqaTmGtgAa7oeviKYBLoDzDqV4ysr9jYt7CM0GU0JVH7ENKm3wIDAQAB\;
+_cpanel-dcv-test-record	14400	IN	TXT	_cpanel-dcv-test-record=XBr7BeCwx8C984F0mqffO7MQqLifSr3Xdp6ABT9jBHMOQiZ8_luPjyg85EsDh4pP
+_acme-challenge.webdisk	14400	IN	TXT	zRws8UP8iuMpecsN1l7dwb9J4YLF0FNVFmLOkLtgw88
+_acme-challenge.cpcontacts	14400	IN	TXT	hi_JgrW_rAes4QpApOenwH-SojYHej2WNqo4NJs2qFo
+_acme-challenge.webmail	14400	IN	TXT	fJ8uopF7__klRGbwj_EG-NLDfVS4wzCkqypAldEdO28
+_acme-challenge.cpanel	14400	IN	TXT	8sDAFa9QDARfvCaer29ZL0hCQLFDFC7_CERU6uFjFiw
+_acme-challenge.cpcalendars	14400	IN	TXT	b1e6edul2Cj3k2QxMHA-EgojvcxiEbntQGd463f-n8c

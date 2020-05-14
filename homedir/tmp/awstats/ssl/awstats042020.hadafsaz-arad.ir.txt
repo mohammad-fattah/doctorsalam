@@ -1,0 +1,716 @@
+AWSTATS DATA FILE 7.7 (build 20180105)
+# If you remove this file, all statistics for date 202004 will be lost/reset.
+# Last config file used to build this data file was /home/hadafsaz/tmp/awstats/ssl/awstats.hadafsaz-arad.ir.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 28
+POS_GENERAL 2017                
+POS_TIME 2694                
+POS_VISITOR 15336               
+POS_DAY 20548               
+POS_DOMAIN 3538                
+POS_LOGIN 3989                
+POS_ROBOT 4144                
+POS_WORMS 4744                
+POS_EMAILSENDER 4875                
+POS_EMAILRECEIVER 5018                
+POS_SESSION 21284               
+POS_SIDER 21492               
+POS_FILETYPES 5153                
+POS_DOWNLOADS 5456                
+POS_OS 5504                
+POS_BROWSER 5749                
+POS_SCREENSIZE 6926                
+POS_UNKNOWNREFERER 7000                
+POS_UNKNOWNREFERERBROWSER 7609                
+POS_ORIGIN 8006                
+POS_SEREFERRALS 8149                
+POS_PAGEREFS 8336                
+POS_SEARCHWORDS 8889                
+POS_KEYWORDS 9050                
+POS_MISC 2358                
+POS_ERRORS 9118                
+POS_CLUSTER 3845                
+POS_SIDER_404 9223                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20200501000601 27 6142 5958088319032
+FirstTime 20200404164326
+LastTime 20200430230859
+LastUpdate 20200501172134 27 0 26 0 0
+TotalVisits 193                 
+TotalUnique 123                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 129                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+JavascriptDisabled 0 0 0
+TotalMisc 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+QuickTimeSupport 0 0 0
+RealPlayerSupport 0 0 0
+PDFSupport 0 0 0
+AddToFavourites 0 0 0
+JavaEnabled 0 0 0
+FlashSupport 0 0 0
+DirectorSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 47 152 5355325 90 104 149385
+1 3 3 14887 14 27 71592
+2 34 97 3694643 41 55 191794
+3 13 113 4628338 16 19 96867
+4 61 209 8254213 33 45 198336
+5 80 135 2833981 25 37 53384
+6 20 26 703950 26 34 86339
+7 21 64 2686865 34 48 186521
+8 25 61 2492078 47 83 1252882
+9 19 63 2347763 35 50 475730
+10 28 157 5761556 11 13 26696
+11 45 199 7458515 22 30 133811
+12 111 258 8899296 31 42 195112
+13 78 160 4013899 31 34 43244
+14 70 287 12251465 18 20 137788
+15 78 289 8220594 34 56 878938
+16 47 135 3533899 18 32 161510
+17 89 341 10898179 42 71 855441
+18 53 110 2944954 30 47 452935
+19 56 183 5602659 42 73 501685
+20 60 225 7751643 66 106 1583117
+21 45 190 6995543 13 17 20258
+22 2 2 24795 14 33 148807
+23 53 167 5326004 18 29 57914
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 25 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 16
+ir 773 2460 79644175
+us 273 906 34975160
+de 29 89 1550340
+dk 27 65 2763246
+ru 15 46 1447646
+ca 7 38 1813626
+gb 5 13 271095
+fr 1 1 11917
+pl 1 1 52695
+ch 1 1 12920
+in 1 1 8110
+cn 1 1 12920
+eu 1 1 52695
+tr 1 1 12920
+cz 1 1 52695
+ro 1 1 12884
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 25 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+Googlebot/ 75 932035 20200430192515 0
+YandexBot/ 57 1714222 20200424083416 0
+msnbot/ 32 482134 20200420235028 0
+bingpreview 29 1283484 20200415205403 0
+AhrefsBot/ 25 289718 20200430234030 0
+Googlebot\-Image/ 16 632577 20200429155436 0
+bot[\s_+:,\.\;\/\\-] 12 632340 20200429143702 0
+bingbot/ 6 62884 20200430174335 0
+[\s_+:,\.\;\/\\-]bot 3 38716 20200428114211 0
+no_user_agent 3 78497 20200417160652 0
+Wget/ 1 52695 20200415080656 0
+CFNetwork 1 6508 20200418015056 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 12
+jpg 62 29212168 0 0
+ttf 1 0 0 0
+svg 358 1398412 0 0
+woff2 12 312400 0 0
+html 269 4573676 0 0
+png 1183 41387434 0 0
+gif 21 3676974 0 0
+woff 132 14979700 0 0
+eot 11 622622 0 0
+js 437 7168983 0 0
+Unknown 713 6453559 0 0
+css 427 12909116 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 13
+macosx10 5 5
+linux 164 49
+win7 759 298
+macosx11 97 23
+win8 1 1
+macosx8 1 1
+macosx12 1 1
+Unknown 464 291
+linuxandroid 920 165
+win10 802 217
+winxp 3 3
+macosx 20 7
+ios_iphone 389 77
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 52
+msie9.0 7 0
+chrome80.0.3987.132 30 5
+chrome80.0.3987.163 610 277
+chrome38.0.2125.102 35 5
+chrome72.0.3626.121 44 10
+firefox59.0 1 1
+firefox25.0 1 1
+firefox54.0 1 1
+chrome69.0.3497.100 1 1
+safari13.0.4 343 69
+chrome79.0.3945.79 24 24
+safari13.0.5 46 8
+firefox68.0 60 15
+chrome58.0.3029.110 15 15
+chrome26.0.1410.65 1 1
+msie8.0 60 10
+chrome38.0.1025.166 320 31
+chrome80.0.3987 1 1
+firefox68.7.0 1 0
+chrome75.0.3770.143 38 8
+firefox66.0 1 1
+chrome81.0.4044.111 92 22
+Unknown 452 279
+chrome80.0.3987.119 56 16
+chrome79.0.3945.136 64 10
+chrome75.0.3770.142 36 12
+chrome75.0.3770.100 37 6
+opera67.0.3575.115 20 7
+chrome55.0.2883.87 1 1
+firefox74.0 356 95
+firefox75.0 291 62
+chrome27.0.1453.94 1 1
+chrome48.0.2564.109 1 1
+chrome81.0.4044.96 35 5
+mozilla 4 4
+chrome81.0.4044.122 20 1
+msie6.0 2 2
+chrome80.0.3987.162 5 1
+chrome76.0.3809.100 2 2
+firefox57.0 2 2
+chrome79.0.3945.130 4 4
+chrome63.0.3239.132 1 1
+firefox50.0 63 3
+chrome80.0.3987.99 87 22
+firefox71.0 1 1
+chrome45.0.2454.101 4 4
+netscape5.0 9 9
+chrome80.0.3987.149 210 56
+chrome53.0.2785.143 28 12
+chrome76.0.3809.132 34 3
+chrome61.0.3163.100 34 5
+chrome74.0.3729.169 34 5
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 12
+WordPress.com;_http://hadafsaz-arad.ir 20200420125054
+Go-http-client/1.1 20200425230559
+python-requests/2.18.4 20200408083412
+WhatsApp/2.20.123_A 20200419231229
+Mozilla/5.0_zgrab/0.x_(compatible;_Researchscan/t13rl;__http://researchscan.comsys.rwth-aachen.de) 20200405043836
+okhttp/3.6.0 20200407014400
+Mozilla/5.0_zgrab/0.x 20200416192828
+Scrapy/2.0.1_(_https://scrapy.org) 20200425051725
+Mozilla/5.0_(compatible;_evc-batch/2.0) 20200420155856
+python-requests/2.23.0 20200422064855
+AGENT 20200425115814
+\ 20200430024449
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 9
+WhatsApp/2.20.123_A 20200419231229
+WordPress.com;_http://hadafsaz-arad.ir 20200420125054
+Scrapy/2.0.1_(_https://scrapy.org) 20200425051725
+Go-http-client/1.1 20200425230559
+python-requests/2.18.4 20200408083412
+python-requests/2.23.0 20200422064855
+AGENT 20200425115814
+okhttp/3.6.0 20200407014400
+\ 20200430024449
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 352 483
+From1 0 0
+From2 14 14
+From3 42 58
+From4 730 3071
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 3
+yandexru 1 1
+www_google_com 11 11
+bing 2 2
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 25 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 4
+https://mail.hadafsaz-arad.ir 33 49
+http://89.39.208.70:80 5 5
+https://ponisha.ir/project/129623/html-php-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AA%D8%AD%D8%AA-%D9%88%D8%A8/%D8%B7%D8%B1%D8%A7%D8%AC%DB%8C-%D9%BE%D9%86%D9%84-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%AC%D9%87%D8%AA-%D9%85%D8%B3%D8%A6%D9%88%D9%84%DB%8C%D9%86-%D8%AF%D9%81%D8%AA%D8%B1 3 3
+https://zoxh.com 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+amazon 2
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 25 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+amazon 2
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+206 12 831284
+404 812 922992
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referrer
+BEGIN_SIDER_404 167
+/dev/index.php/admin/ 1 -
+/demo/errors/503.php 1 -
+/staging/rss/catalog/review 1 -
+/shop/rss/catalog/notifystock 1 -
+/test1/license.txt 1 http://hadafsaz-arad.ir/test1/license.txt
+/demo/downloader/index.php 1 -
+/assets/img/patient-vector.png 4 https://hadafsaz-arad.ir/signup
+/composer.json 1 -
+/magento/rss/catalog/review 1 -
+/demo/wp-login.php 1 -
+//place 1 -
+/shop/index.php/admin/ 1 -
+/demo/rss/catalog/review 1 -
+/assets/js/jquery.min.map 7 -
+//blog/wp-includes/wlwmanifest.xml 1 -
+/detail/doctor/9 4 https://hadafsaz-arad.ir/
+/new/license.txt 2 http://hadafsaz-arad.ir/new/license.txt
+/ads.txt 8 http://hadafsaz-arad.ir/ads.txt
+/downloader/index.php 1 -
+/staging/rss/order/new 1 -
+/search/'%20+%20msg[i].image%20+%20' 10 https://hadafsaz-arad.ir/search/clinic
+/shop/downloader/index.php 1 -
+//facebook.com 1 -
+/phpmyadmin/scripts/setup.php 1 -
+//wp-login.php 1 -
+/old/rss/order/new 1 -
+//wp/wp-includes/wlwmanifest.xml 1 -
+/detail/clinic/'%20+%20msg[i].id%20+%20' 10 https://hadafsaz-arad.ir/search/clinic
+/old/wp-login.php 1 -
+//ios 1 -
+/apple-touch-icon-120x120.png 1 -
+/blog/license.txt 1 http://hadafsaz-arad.ir/blog/license.txt
+/blogs/license.txt 1 http://hadafsaz-arad.ir/blogs/license.txt
+//admin 1 -
+/inf/license.txt 1 http://hadafsaz-arad.ir/inf/license.txt
+/detail/clinic/5 3 https://hadafsaz-arad.ir/search/clinic
+/staging/index.php/admin/ 1 -
+/store/downloader/index.php 1 -
+/api/v1/setting/Category 1 -
+/detail/doctor/'%20+%20msg[i].id%20+%20' 10 https://hadafsaz-arad.ir/
+/apple-touch-icon-120x120-precomposed.png 1 -
+/phpmyadmin/ 1 http://hadafsaz-arad.ir/phpmyadmin/
+/detail/doctor/2 26 https://hadafsaz-arad.ir/search
+/temp/ 2 http://hadafsaz-arad.ir/temp/
+/test/downloader/index.php 1 -
+/portal/wp-login.php 1 -
+/old/license.txt 2 http://hadafsaz-arad.ir/old/license.txt
+/assets/js/jquery.number.min.js.map 7 -
+/rss/catalog/notifystock 1 -
+/dev/downloader/index.php 1 -
+/login 1 -
+/old/errors/503.php 1 -
+//wordpress/wp-includes/wlwmanifest.xml 1 -
+/wp/wp-login.php 1 -
+/english/wp-login.php 1 -
+/bl/license.txt 1 http://hadafsaz-arad.ir/bl/license.txt
+/login.action 1 -
+//vendor/phpunit/phpunit/phpunit.xsd 2 -
+/place 14 https://hadafsaz-arad.ir/
+/info/wp-login.php 1 -
+/blog/wp-login.php 1 -
+/apple-touch-icon-precomposed.png 1 -
+/wordpress/wp-login.php 1 -
+/shop/errors/503.php 1 -
+/magento/index.php/admin/ 1 -
+/blogs/wp-login.php 1 -
+/index/notation 4 -
+/store/index.php/admin/ 1 -
+/rss/order/new 1 -
+/console 2 -
+/atutor/index.php 1 -
+/new/wp-login.php 1 -
+/staging/downloader/index.php 1 -
+/demo/index.php/admin/ 1 -
+/shop/rss/catalog/review 1 -
+/old/rss/catalog/review 1 -
+/search/twitter.com 12 https://hadafsaz-arad.ir/search/clinic
+/test/rss/order/new 1 -
+/backup/license.txt 1 http://hadafsaz-arad.ir/backup/license.txt
+/robots.txt 133 -
+/magento/errors/503.php 1 -
+/dev/rss/order/new 1 -
+/app-ads.txt 4 -
+/recover-password 1 https://hadafsaz-arad.ir/
+//twitter.com 1 -
+/back/license.txt 1 http://hadafsaz-arad.ir/back/license.txt
+/detail/doctor/8 4 https://hadafsaz-arad.ir/
+/2015/license.txt 1 http://hadafsaz-arad.ir/2015/license.txt
+/store/rss/catalog/notifystock 1 -
+/.env 1 -
+/www/license.txt 2 http://hadafsaz-arad.ir/www/license.txt
+/1/license.txt 2 http://hadafsaz-arad.ir/1/license.txt
+/phpMyAdmin/scripts/setup.php 1 -
+/license.txt 2 http://hadafsaz-arad.ir/license.txt
+/wp-login.php 17 -
+/assets/css/persian-datepicker.min.css.map 6 -
+/store/rss/catalog/review 1 -
+/xmlrpc.php 225 -
+/sites/wp-login.php 1 -
+/android 15 https://hadafsaz-arad.ir/
+//cms/wp-includes/wlwmanifest.xml 1 -
+/magento/downloader/index.php 1 -
+/wpmu/wp-login.php 1 -
+/demo/rss/catalog/notifystock 1 -
+/facebook.com 13 https://hadafsaz-arad.ir/
+/arx/license.txt 1 http://hadafsaz-arad.ir/arx/license.txt
+/ios 12 https://hadafsaz-arad.ir/
+/demo/rss/order/new 1 -
+/news/wp-login.php 1 -
+/old/index.php/admin/ 1 -
+/2016/license.txt 1 http://hadafsaz-arad.ir/2016/license.txt
+/detail/doctor/6 8 https://hadafsaz-arad.ir/search
+//wp-includes/wlwmanifest.xml 1 -
+/test/index.php/admin/ 1 -
+/site/wp-login.php 1 -
+/index/about_us 8 -
+/sitio/wp-login.php 1 -
+/features 13 https://hadafsaz-arad.ir/
+/web/wp-login.php 1 -
+/old/downloader/index.php 1 -
+//blog 1 -
+/detail/doctor/7 2 https://hadafsaz-arad.ir/
+/wp/license.txt 1 http://hadafsaz-arad.ir/wp/license.txt
+/store/rss/order/new 1 -
+/staging/errors/503.php 1 -
+/test/license.txt 2 http://hadafsaz-arad.ir/test/license.txt
+/w/license.txt 1 http://hadafsaz-arad.ir/w/license.txt
+/test/rss/catalog/notifystock 1 -
+/old/rss/catalog/notifystock 1 -
+/shop/rss/order/new 1 -
+/magento/rss/catalog/notifystock 1 -
+/test/rss/catalog/review 1 -
+/errors/503.php 1 -
+/'%20+%20msg[i].image%20+%20' 10 https://hadafsaz-arad.ir/
+/search/facebook.com 12 https://hadafsaz-arad.ir/search/clinic
+/apple-touch-icon.png 1 -
+//xmlrpc.php 1 -
+/.well-known/assetlinks.json 5 -
+/dev/rss/catalog/review 1 -
+/2020/license.txt 1 http://hadafsaz-arad.ir/2020/license.txt
+/dev/rss/catalog/notifystock 1 -
+/horde/imp/test.php 1 -
+/admin/ 1 http://hadafsaz-arad.ir/admin/
+/site/license.txt 2 http://hadafsaz-arad.ir/site/license.txt
+/magento/rss/order/new 1 -
+/test/errors/503.php 1 -
+/en/wp-login.php 1 -
+/dev/license.txt 1 http://hadafsaz-arad.ir/dev/license.txt
+/assets/fonts/IRANSansWeb(FaNum)_Light.ttf 11 https://hadafsaz-arad.ir/
+//android 1 -
+/ 16 -
+/phpMyAdmin/ 1 http://hadafsaz-arad.ir/phpMyAdmin/
+/twitter.com 13 https://hadafsaz-arad.ir/
+/rss/catalog/review 1 -
+/api/v1/search/User_address 7 -
+/dev/errors/503.php 1 -
+/home/wp-login.php 1 -
+/blog 16 -
+//javascript: 1 -
+/store/errors/503.php 1 -
+/tmp/license.txt 1 http://hadafsaz-arad.ir/tmp/license.txt
+//recover-password 1 -
+/staging/rss/catalog/notifystock 1 -
+//hadafsaz-arad.ir 1 -
+/index.php/admin/ 1 -
+/wordpress/license.txt 1 http://hadafsaz-arad.ir/wordpress/license.txt
+/press/wp-login.php 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 25 first Hits must be first (order not required for others)
+BEGIN_VISITOR 129
+89.198.153.126 238 446 11481191 20200405141816
+89.198.158.46 62 103 2371353 20200406190012
+188.210.170.35 60 248 5482703 20200414173921
+86.57.76.22 56 200 5607038 20200412213615
+5.212.249.48 34 72 2257977 20200407024419
+80.210.61.175 27 65 2763246 20200408131020
+3.235.103.162 25 37 1218987 20200422132006
+131.220.6.152 24 24 305023 20200427185747
+91.185.145.211 24 92 2313839 20200419231402
+159.203.91.9 23 97 4802519 20200406122225
+86.57.0.211 23 107 4032644 20200411141526
+2.147.17.0 21 55 1902500 20200409213709
+86.57.1.254 20 99 2844951 20200410182912
+86.57.81.38 17 55 1864090 20200409131855
+31.2.248.29 15 16 90254 20200414175606
+31.2.149.65 14 60 2097001 20200415183201
+18.213.247.214 13 19 635841 20200412005528
+3.230.3.73 13 19 635841 20200417185345
+89.219.103.64 13 50 2044726 20200406171110
+34.200.222.100 12 18 583146 20200410024307
+3.231.146.98 12 18 583146 20200409024131
+54.236.34.168 12 18 583146 20200410192947
+3.235.49.154 12 18 583146 20200424060238
+18.232.178.103 12 18 583146 20200419073130
+3.232.96.216 12 16 584573 20200416125501
+204.187.14.70 6 37 1800706 20200405141614
+74.208.214.189 3 3 38760 20200422064855
+54.175.142.73 1 1 52695 20200426093733
+66.249.83.102 3 37 1431454 20200409032042
+5.250.21.45 4 10 1201497 20200408212610
+86.55.43.212 1 1 12920 20200419121730
+66.102.8.8 1 24 490071 20200409032043
+157.55.39.251 0 1 4612 
+109.238.177.48 5 25 1165383 20200411103258
+216.145.14.142 1 1 12920 20200421085734
+65.154.226.109 5 34 1780607 20200405071528
+207.46.13.247 0 1 4612 
+198.71.235.70 2 2 23834 20200405090929
+91.251.86.98 10 44 1810257 20200407195452
+5.52.102.23 1 1 12876 20200412003431
+5.210.153.47 5 35 1528281 20200428110612
+185.183.96.122 1 1 12876 20200415110920
+86.55.107.159 11 11 16331 20200406211842
+198.108.66.32 1 1 12920 20200416162145
+86.55.33.32 1 1 12920 20200410081724
+193.148.18.251 10 10 108616 20200406150607
+23.108.48.23 1 1 12920 20200414154849
+34.217.18.160 1 1 12883 20200416202555
+208.80.194.41 1 1 52695 20200416180349
+86.57.11.183 8 37 1582523 20200414111608
+18.188.91.120 7 19 328518 20200413095330
+209.99.175.35 1 1 12920 20200426045305
+194.36.188.199 1 1 52695 20200415061253
+185.254.70.34 1 1 12920 20200426001258
+5.200.72.182 10 70 3574230 20200406143500
+158.222.6.22 1 1 8110 20200426045306
+5.208.113.117 5 30 1527679 20200406202523
+8.20.127.61 8 46 2097387 20200406074154
+66.249.88.150 4 45 2130911 20200414110515
+5.117.208.120 5 29 1305608 20200421110613
+66.249.88.156 4 46 2135625 20200414110515
+198.108.66.240 4 4 51670 20200415060224
+46.42.131.23 3 34 1313234 20200425101719
+137.226.113.26 1 1 8717 20200405043836
+167.114.250.111 1 1 12920 20200413160840
+157.55.39.175 0 4 54172 
+192.0.91.201 1 1 11875 20200405222043
+51.91.31.157 1 9 139945 20200407004138
+62.171.169.50 2 2 105390 20200425115814
+86.57.114.201 10 54 1491481 20200419230028
+86.57.119.56 6 21 202381 20200409173113
+188.211.87.206 5 35 1571589 20200416172446
+94.177.232.80 1 1 12884 20200421154302
+154.51.131.142 4 4 51680 20200429123550
+167.172.249.225 1 1 12920 20200421121931
+34.210.228.77 1 1 12882 20200416202724
+70.42.131.189 5 26 608502 20200416134508
+5.211.95.112 5 25 1165333 20200420210434
+134.209.191.211 1 1 12920 20200415082724
+45.77.134.191 1 1 12920 20200425230559
+62.102.131.94 9 42 1792024 20200413153841
+40.77.167.81 0 1 38912 
+45.152.32.15 1 1 8110 20200414154854
+178.22.67.159 1 1 12920 20200430230859
+188.212.244.231 1 20 388139 20200425095007
+193.202.80.197 1 1 52695 20200418002931
+198.108.66.161 1 1 12884 20200415163915
+5.122.119.80 10 68 3130162 20200411152220
+44.234.50.155 1 1 12920 20200425223052
+167.71.131.30 1 1 12920 20200410094108
+198.108.66.80 2 2 22812 20200415192432
+77.234.44.190 1 1 52695 20200414191440
+45.33.20.249 4 33 1453981 20200404165030
+3.232.56.123 1 1 52695 20200430024449
+34.213.10.134 1 1 12845 20200416175125
+5.106.162.12 5 35 1571589 20200408003741
+66.249.83.104 3 33 1435174 20200416125327
+86.57.41.239 6 36 990217 20200418015054
+188.229.48.79 4 8 713084 20200411174317
+74.125.212.4 0 5 165771 
+66.249.88.153 7 52 1859168 20200416194030
+62.210.111.118 1 1 11917 20200405201432
+222.94.195.179 1 1 12920 20200425051725
+208.80.194.42 1 1 52695 20200415100944
+85.10.207.246 1 1 52695 20200416051240
+188.229.36.150 1 5 12920 20200415143646
+5.211.209.148 10 44 1449642 20200407000654
+86.57.105.16 9 43 1799869 20200409172140
+212.68.50.177 1 1 12920 20200415120929
+66.102.8.4 2 24 745403 20200427201733
+38.99.62.94 2 2 105390 20200420155856
+130.255.197.125 9 43 1799935 20200409215430
+3.231.167.107 12 18 583146 20200427202723
+137.226.113.34 3 63 1183905 20200410213300
+45.79.30.86 5 34 1565081 20200419043538
+129.213.62.212 2 2 105390 20200421213841
+74.125.212.8 1 4 79126 20200405215252
+5.117.190.102 5 35 1571589 20200419231116
+129.2.245.216 1 1 12920 20200408083412
+66.102.8.6 3 16 1386662 20200427201727
+198.108.66.64 1 1 12920 20200416192828
+74.125.212.6 0 4 33553 
+18.222.65.12 5 17 309361 20200406154811
+66.249.83.101 3 30 1070864 20200416125322
+51.15.86.148 1 1 12840 20200407072534
+5.52.222.11 3 3 17442 20200429083409
+192.0.102.194 1 1 12920 20200420125054
+198.58.107.211 5 34 1565081 20200408023909
+5.250.84.13 12 46 1836007 20200408173016
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 27
+20200404 6 35 1473742 3
+20200405 285 627 19531447 14
+20200406 206 627 22480591 16
+20200407 37 155 5420093 11
+20200408 31 136 6628142 7
+20200409 93 372 13044159 17
+20200410 46 179 5035623 11
+20200411 75 299 11281558 8
+20200412 39 131 4041310 6
+20200413 18 63 2146382 4
+20200414 53 192 4252803 12
+20200415 27 77 2344421 11
+20200416 37 151 5568413 15
+20200417 19 55 1626058 3
+20200418 8 33 1390688 4
+20200419 54 206 6251743 10
+20200420 8 28 1243868 4
+20200421 11 36 1467254 6
+20200422 29 46 1363751 6
+20200423 1 1 12920 1
+20200424 14 20 648761 3
+20200425 8 58 1792828 6
+20200426 4 4 86645 4
+20200427 18 53 1932974 6
+20200428 5 36 1532893 1
+20200429 4 4 30362 2
+20200430 2 2 65615 2
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+30mn-1h 3
+15mn-30mn 6
+1h+ 3
+5mn-15mn 7
+2mn-5mn 3
+30s-2mn 10
+0s-30s 161
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 25 first Pages must be first (order not required for others)
+BEGIN_SIDER 32
+/ 268 4524655 172 100
+/api/v1/settings/state 174 357764 7 13
+/api/v1/search/searchPageOne 112 274908 3 37
+/search 94 2333089 3 6
+/api/v1/search/search 88 134440 0 2
+/assets/fonts/IRANSansWeb(FaNum)_Light.woff 71 2440500 0 1
+/assets/fonts/icomoon.woff 61 12539200 0 10
+/api/v1/settings/Category 41 41245 0 2
+/api/v1/search/detail 31 66035 0 5
+/api/v1/settings/User_address 25 9473 0 0
+/api/v1/agent/InfoAgent 24 22440 4 0
+/search/doctor 23 689438 0 1
+/search/clinic 20 657117 0 0
+/about 17 407366 0 2
+/moshaver 16 513707 0 11
+/contact 15 391971 2 2
+/assets/fonts/IRANSansWeb(FaNum)_Light.woff2 12 312400 0 0
+/assets/fonts/IRANSansWeb(FaNum)_Light.eot 11 622622 0 0
+/detail/doctor/2 8 101403 0 0
+/features 7 62538 1 1
+/signup 4 12170 1 0
+//search 3 141579 0 0
+/detail/clinic/5 3 30323 0 0
+/api/v1/car/CarType 2 2038 0 0
+/assets/fonts/icomoon.ttf 1 0 0 0
+//moshaver 1 42089 0 0
+//features 1 41060 0 0
+//search/doctor 1 47193 0 0
+// 1 49021 0 0
+//search/clinic 1 47193 0 0
+/detail/doctor/7 1 13542 0 0
+/detail/doctor/'%20+%20msg[i].id%20+%20' 1 13438 0 0
+END_SIDER

@@ -1,0 +1,1013 @@
+<?php
+
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+
+class Organizational extends MY_Controller {
+
+    function __construct() {
+        parent::__construct();
+        //$this->access_only_team_members();
+		//$this->init_permission_checker("can_view_merchant");
+    }
+
+    private function can_view_team_members_contact_info() {
+        if ($this->login_user->user_type == "organizational") {
+            if ($this->login_user->is_admin) {
+                return true;
+            } else if (get_array_value($this->login_user->permissions, "can_view_team_members_contact_info") == "1") {
+                return true;
+            }
+        }
+    }
+
+    private function can_view_team_members_social_links() {
+        if ($this->login_user->user_type == "organizational") {
+            if ($this->login_user->is_admin) {
+                return true;
+            } else if (get_array_value($this->login_user->permissions, "can_view_team_members_social_links") == "1") {
+                return true;
+            }
+        }
+    }
+
+    private function update_only_allowed_members($user_id) {
+        if ($this->can_update_team_members_info($user_id)) {
+            return true; //own profile
+        } else {
+            redirect("forbidden");
+        }
+    }
+
+    //only admin can change other user's info
+    //none admin users can only change his/her own info
+    //allowed members can update other members info    
+    private function can_update_team_members_info($user_id) {
+        $access_info = $this->get_access_info("team_member_update_permission");
+
+        if ($this->login_user->id === $user_id) {
+            return true; //own profile
+        } else if ($access_info->access_type == "all") {
+            return true; //has access to change all user's profile
+        } else if ($user_id && in_array($user_id, $access_info->allowed_members)) {
+            return true; //has permission to update this user's profile
+        } else {
+
+            return false;
+        }
+    }
+
+    //only admin can change other user's info
+    //none admin users can only change his/her own info
+    private function only_admin_or_own($user_id) {
+        if ($user_id && ($this->login_user->is_admin || $this->login_user->id === $user_id)) {
+            return true;
+        } else {
+            redirect("forbidden");
+        }
+    }
+
+    public function index() {
+		//$this->access_only_allowed_members();
+        $view_data["show_contact_info"] = $this->can_view_team_members_contact_info();
+
+        $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("team_members", $this->login_user->is_admin, $this->login_user->user_type);
+
+        $this->template->rander("organizational/index", $view_data);
+    }
+
+    /* open new member modal */
+
+    function modal_form() {
+        $this->access_only_admin();
+
+        validate_submitted_data(array(
+            "id" => "numeric"
+        ));
+
+        $view_data['role_dropdown'] = $this->_get_roles_dropdown();
+
+        $id = $this->input->post('id');
+        $options = array(
+            "id" => $id,
+        );
+
+        $view_data['model_info'] = $this->Users_model->get_details($options)->row();
+
+        $view_data["custom_fields"] = $this->Custom_fields_model->get_combined_details("team_members", 0, $this->login_user->is_admin, $this->login_user->user_type)->result();
+
+        $this->load->view('organizational/modal_form', $view_data);
+    }
+
+    /* save new member */
+
+    function add_client() {
+       $this->access_only_admin();
+
+        if ($this->Users_model->is_email_exists($this->input->post('email'))) {
+            echo json_encode(array("success" => false, 'message' => "ایمیل از قبل ثبت شده است"));
+            exit();
+        }
+		if ($this->Users_model->is_melli_code_exists($this->input->post('melli_code'))) {
+            echo json_encode(array("success" => false, 'message' => "کد ملی از قبل ثبت شده است"));
+            exit();
+        }
+		if ($this->Users_model->is_phone_exists($this->input->post('phone'))) {
+            echo json_encode(array("success" => false, 'message' => "شماره همراه از قبل ثبت شده است"));
+            exit();
+        }
+
+        validate_submitted_data(array(
+            "email" => "required|valid_email",
+            "first_name" => "required",
+            "last_name" => "required",
+            //"role" => "required"
+        ));
+        $user_key=md5(uniqid(rand(), true));
+        $user_data = array(
+            "email" => $this->input->post('email'),
+            "password" => md5($this->input->post('password')),
+            "first_name" => $this->input->post('first_name'),
+            "last_name" => $this->input->post('last_name'),
+            "melli_code" => $this->input->post('melli_code'),
+            "state" => $this->input->post('state'),
+            "city" => $this->input->post('city'),
+            "is_admin" => $this->input->post('is_admin'),
+            "address" => $this->input->post('address'),
+            "phone" => $this->input->post('phone'),
+            "gender" => $this->input->post('gender'),
+            "ssn" => $this->input->post('ssn'),
+            "job_title" => $this->input->post('job_title'),
+            "user_type" => "organizational",
+            "user_key" => $user_key,
+            "created_at" => get_current_utc_time()
+        );
+        $user_data["is_admin"] = 0;
+        $user_data["role_id"] = 0;
+        //make role id or admin permission 
+        /*$role = $this->input->post('role');
+        $role_id = $role;
+
+        if ($role === "admin") {
+            $user_data["is_admin"] = 1;
+            $user_data["role_id"] = 0;
+        } else {
+            $user_data["is_admin"] = 0;
+            $user_data["role_id"] = $role_id;
+        }*/
+
+
+        //add a new team member
+        $user_id = $this->Users_model->save($user_data);
+        $this->Users_model->add_new_card($user_key);
+        if ($user_id) {
+            echo json_encode(array("success" => true, "data" => $this->_row_data($user_id), 'id' => $user_id, 'message' => lang('record_saved')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('error_occurred')));
+        }
+    }
+
+    /* open invitation modal */
+
+    function invitation_modal() {
+        $this->access_only_admin();
+        $this->load->view('organizational/invitation_modal');
+    }
+
+    //send a team member invitation to an email address
+    function send_invitation() {
+        $this->access_only_admin();
+
+        validate_submitted_data(array(
+            "email" => "required|valid_email"
+        ));
+
+        $email = $this->input->post('email');
+
+        //get the send invitation template 
+        $email_template = $this->Email_templates_model->get_final_template("team_member_invitation");
+
+        $parser_data["INVITATION_SENT_BY"] = $this->login_user->first_name . " " . $this->login_user->last_name;
+        $parser_data["SIGNATURE"] = $email_template->signature;
+        $parser_data["SITE_URL"] = get_uri();
+
+        //make the invitation url with 24hrs validity
+        $key = encode_id($this->encrypt->encode('merchant|' . $email . '|' . (time() + (24 * 60 * 60))), "signup");
+        $parser_data['INVITATION_URL'] = get_uri("signup/accept_invitation/" . $key);
+
+        //send invitation email
+        $message = $this->parser->parse_string($email_template->message, $parser_data, TRUE);
+        if (send_app_mail($email, $email_template->subject, $message)) {
+            echo json_encode(array('success' => true, 'message' => lang("invitation_sent")));
+        } else {
+            echo json_encode(array('success' => false, 'message' => lang('error_occurred')));
+        }
+    }
+
+    //prepere the data for members list
+    function list_data() {
+        $custom_fields = $this->Custom_fields_model->get_available_fields_for_table("team_members", $this->login_user->is_admin, $this->login_user->user_type);
+        $options = array(
+            "status" => $this->input->post("status"),
+            "user_type" => "organizational",
+            "custom_fields" => $custom_fields
+        );
+
+
+        $list_data = $this->Users_model->get_details($options)->result();
+        $result = array();
+        foreach ($list_data as $data) {
+            $result[] = $this->_make_row($data, $custom_fields);
+        }
+        echo json_encode(array("data" => $result));
+    }
+
+    //get a row data for member list
+    function _row_data($id) {
+        $custom_fields = $this->Custom_fields_model->get_available_fields_for_table("team_members", $this->login_user->is_admin, $this->login_user->user_type);
+        $options = array(
+            "id" => $id,
+            "custom_fields" => $custom_fields
+        );
+
+        $data = $this->Users_model->get_details($options)->row();
+        return $this->_make_row($data, $custom_fields);
+    }
+
+    //prepare team member list row
+    private function _make_row($data, $custom_fields) {
+        $image_url = get_avatar($data->image);
+        //$user_avatar = "<span class='avatar avatar-xs'><img src='$image_url' alt='...'></span>";
+        $full_name = $data->first_name . " " . $data->last_name . " ";
+
+
+        //check contact info view permissions
+        $show_cotact_info = $this->can_view_team_members_contact_info();
+        if($data->leveler==0){$level=$data->leveler;}else{$level='پایه';}
+        if($data->status=='active'){$status='فعال';}else{$status='غیرفعال';}
+        $row_data = array(
+			$data->first_name.' '.$data->last_name,
+            $data->email,
+            $data->melli_code,
+            $data->state,
+            $level,
+			$data->job_title,
+            $status
+        );
+		
+        foreach ($custom_fields as $field) {
+            $cf_id = "cfv_" . $field->id;
+            $row_data[] = $this->load->view("custom_fields/output_" . $field->field_type, array("value" => $data->$cf_id), true);
+        }
+        
+        $delete_link = "";
+        if ($this->login_user->is_admin && $this->login_user->id != $data->id) {
+            $delete_link = anchor(get_uri("organizational/view/" . $data->id), "<i class='fa fa-pencil'></i>", array("class" => "edit", "title" => lang('edit'))).js_anchor("<i class='fa fa-times fa-fw'></i>", array('title' => lang('delete_team_member'), "class" => "delete", "data-id" => $data->id, "data-action-url" => get_uri("organizational/delete"), "data-action" => "delete-confirmation"));
+        }
+        $row_data[] = $delete_link;
+
+        return $row_data;
+    }
+
+    //delete a team member
+    function delete() {
+        $this->access_only_admin();
+
+        validate_submitted_data(array(
+            "id" => "required|numeric"
+        ));
+
+        $id = $this->input->post('id');
+      
+        if ($id != $this->login_user->id && $this->Users_model->delete($id)) {
+            echo json_encode(array("success" => true, 'message' => lang('record_deleted')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('record_cannot_be_deleted')));
+        }
+    }
+
+    //show team member's details view
+    function view($id = 0, $tab = "") {
+        if ($id * 1) {
+            //we have an id. view the team_member's profie
+            $options = array("id" => $id, "user_type" => "organizational");
+            $user_info = $this->Users_model->get_details($options)->row();
+            if ($user_info) {
+
+                //check which tabs are viewable for current logged in user
+                $view_data['show_timeline'] = get_setting("module_timeline") ? true : false;
+
+                $can_update_team_members_info = $this->can_update_team_members_info($id);
+
+                $view_data['show_general_info'] = $can_update_team_members_info;
+                $view_data['show_job_info'] = false;
+
+                $view_data['show_account_settings'] = false;
+
+                $show_attendance = false;
+                $show_leave = false;
+
+                $expense_access_info = $this->get_access_info("expense");
+                $view_data["show_expense_info"] = (get_setting("module_expense") == "1" && $expense_access_info->access_type == "all") ? true : false;
+
+                //admin can access all members attendance and leave
+                //none admin users can only access to his/her own information 
+
+                if ($this->login_user->is_admin || $user_info->id === $this->login_user->id) {
+                    $show_attendance = true;
+                    $show_leave = true;
+                    $view_data['show_job_info'] = true;
+                    $view_data['show_account_settings'] = true;
+                } else {
+                    //none admin users but who has access to this team member's attendance and leave can access this info
+                    $access_timecard = $this->get_access_info("attendance");
+                    if ($access_timecard->access_type === "all" || in_array($user_info->id, $access_timecard->allowed_members)) {
+                        $show_attendance = true;
+                    }
+
+                    $access_leave = $this->get_access_info("leave");
+                    if ($access_leave->access_type === "all" || in_array($user_info->id, $access_leave->allowed_members)) {
+                        $show_leave = true;
+                    }
+                }
+
+
+                //check module availability
+                $view_data['show_attendance'] = $show_attendance && get_setting("module_attendance") ? true : false;
+                $view_data['show_leave'] = $show_leave && get_setting("module_leave") ? true : false;
+
+
+                //check contact info view permissions
+                $show_cotact_info = $this->can_view_team_members_contact_info();
+                $show_social_links = $this->can_view_team_members_social_links();
+
+                //own info is always visible
+                if ($id == $this->login_user->id) {
+                    $show_cotact_info = true;
+                    $show_social_links = true;
+                }
+
+                $view_data['show_cotact_info'] = $show_cotact_info;
+                $view_data['show_social_links'] = $show_social_links;
+
+
+                //show projects tab to admin
+                $view_data['show_projects'] = false;
+                if ($this->login_user->is_admin) {
+                    $view_data['show_projects'] = true;
+                }
+
+
+                $view_data['tab'] = $tab; //selected tab
+                $view_data['user_info'] = $user_info;
+                $view_data['social_link'] = $this->Social_links_model->get_one($id);
+                $this->template->rander("organizational/view", $view_data);
+            } else {
+                show_404();
+            }
+        } else {
+            //we don't have any specific id to view. show the list of team_member
+            $view_data['team_members'] = $this->Users_model->get_details(array("user_type" => "organizational", "status" => "active"))->result();
+            $this->template->rander("organizational/profile_card", $view_data);
+        }
+    }
+    function store($id = 0, $tab = "") {
+        if ($id * 1) {
+            //we have an id. view the team_member's profie
+            $options = array("id" => $id, "user_type" => "organizational");
+            $user_info = $this->Users_model->get_details($options)->row();
+            if ($user_info) {
+
+                //check which tabs are viewable for current logged in user
+                $view_data['show_timeline'] = get_setting("module_timeline") ? true : false;
+
+                $can_update_team_members_info = $this->can_update_team_members_info($id);
+
+                $view_data['show_general_info'] = $can_update_team_members_info;
+                $view_data['show_job_info'] = false;
+
+                $view_data['show_account_settings'] = false;
+
+                $show_attendance = false;
+                $show_leave = false;
+
+                $expense_access_info = $this->get_access_info("expense");
+                $view_data["show_expense_info"] = (get_setting("module_expense") == "1" && $expense_access_info->access_type == "all") ? true : false;
+
+                //admin can access all members attendance and leave
+                //none admin users can only access to his/her own information 
+
+                if ($this->login_user->is_admin || $user_info->id === $this->login_user->id) {
+                    $show_attendance = true;
+                    $show_leave = true;
+                    $view_data['show_job_info'] = true;
+                    $view_data['show_account_settings'] = true;
+                } else {
+                    //none admin users but who has access to this team member's attendance and leave can access this info
+                    $access_timecard = $this->get_access_info("attendance");
+                    if ($access_timecard->access_type === "all" || in_array($user_info->id, $access_timecard->allowed_members)) {
+                        $show_attendance = true;
+                    }
+
+                    $access_leave = $this->get_access_info("leave");
+                    if ($access_leave->access_type === "all" || in_array($user_info->id, $access_leave->allowed_members)) {
+                        $show_leave = true;
+                    }
+                }
+
+
+                //check module availability
+                $view_data['show_attendance'] = $show_attendance && get_setting("module_attendance") ? true : false;
+                $view_data['show_leave'] = $show_leave && get_setting("module_leave") ? true : false;
+
+
+                //check contact info view permissions
+                $show_cotact_info = $this->can_view_team_members_contact_info();
+                $show_social_links = $this->can_view_team_members_social_links();
+
+                //own info is always visible
+                if ($id == $this->login_user->id) {
+                    $show_cotact_info = true;
+                    $show_social_links = true;
+                }
+
+                $view_data['show_cotact_info'] = $show_cotact_info;
+                $view_data['show_social_links'] = $show_social_links;
+
+
+                //show projects tab to admin
+                $view_data['show_projects'] = false;
+                if ($this->login_user->is_admin) {
+                    $view_data['show_projects'] = true;
+                }
+
+
+                $view_data['tab'] = $tab; //selected tab
+                $view_data['user_info'] = $user_info;
+                $view_data['social_link'] = $this->Social_links_model->get_one($id);
+                $this->template->rander("organizational/store", $view_data);
+            } else {
+                show_404();
+            }
+        } else {
+            //we don't have any specific id to view. show the list of team_member
+            $view_data['team_members'] = $this->Users_model->get_details(array("user_type" => "organizational", "status" => "active"))->result();
+            $this->template->rander("organizational/store", $view_data);
+        }
+    }
+
+    //show the job information of a team member
+    function job_info($user_id) {
+        $this->only_admin_or_own($user_id);
+
+        $options = array("id" => $user_id);
+        $user_info = $this->Users_model->get_details($options)->row();
+
+        $view_data['id'] = $user_id;
+		$view_data['user_info'] = $this->Users_model->get_one($user_id);
+        //$view_data['job_info'] = $this->Users_model->get_job_info($user_id);
+        //$view_data['job_info']->job_title = $user_info->job_title;
+        $this->load->view("organizational/job_info", $view_data);
+    }
+
+    //save job information of a team member
+    function save_job_info() {
+        $this->access_only_admin();
+
+        validate_submitted_data(array(
+            "user_id" => "required|numeric"
+        ));
+
+        $user_id = $this->input->post('user_id');
+
+        $job_data = array(
+            "user_id" => $user_id,
+            "salary" => unformat_currency($this->input->post('salary')),
+            "salary_term" => $this->input->post('salary_term'),
+            "date_of_hire" => $this->input->post('date_of_hire')
+        );
+
+        //we'll save the job title in users table
+        $user_data = array(
+            "job_title" => $this->input->post('job_title'),
+            "psp_code" => $this->input->post('psp_code'),
+            "psp_category" => $this->input->post('psp_category'),
+            "off_bank" => $this->input->post('off_bank'),
+            "off_no_bank" => $this->input->post('off_no_bank'),
+            "porsant" => $this->input->post('porsant')
+        );
+
+        //$this->Users_model->save($user_data, $user_id);
+        if ($this->Users_model->save($user_data, $user_id)) {
+            echo json_encode(array("success" => true, 'message' => lang('record_updated')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('error_occurred')));
+        }
+    }
+
+    //show general information of a team member
+    function general_info($user_id) {
+        $this->update_only_allowed_members($user_id);
+
+        $view_data['user_info'] = $this->Users_model->get_one($user_id);
+        $view_data["custom_fields"] = $this->Custom_fields_model->get_combined_details("team_members", $user_id, $this->login_user->is_admin, $this->login_user->user_type)->result();
+
+        $this->load->view("organizational/general_info", $view_data);
+    }
+
+    //save general information of a team member
+    function save_general_info($user_id) {
+        $this->update_only_allowed_members($user_id);
+
+        validate_submitted_data(array(
+            "first_name" => "required",
+            "last_name" => "required",
+            "address" => "required",
+            "gender" => "required",
+            "state" => "required",
+            "city" => "required",
+        ));
+
+        $user_data = array(
+            "first_name" => $this->input->post('first_name'),
+            "last_name" => $this->input->post('last_name'),
+            "address" => $this->input->post('address'),
+            "phone" => $this->input->post('phone'),
+            "melli_code" => $this->input->post('melli_code'),
+            "gender" => $this->input->post('gender'),
+            "state" => $this->input->post('state'),
+            "city" => $this->input->post('city')
+        );
+
+        $user_info_updated = $this->Users_model->save($user_data, $user_id);
+
+        save_custom_fields("organizational", $user_id, $this->login_user->is_admin, $this->login_user->user_type);
+
+        if ($user_info_updated) {
+            echo json_encode(array("success" => true, 'message' => lang('record_updated')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('error_occurred')));
+        }
+    }
+
+    //show social links of a team member
+    function social_links($user_id) {
+        //important! here id=user_id
+        $this->update_only_allowed_members($user_id);
+
+        $view_data['user_id'] = $user_id;
+        $view_data['model_info'] = $this->Social_links_model->get_one($user_id);
+        $this->load->view("users/social_links", $view_data);
+    }
+
+    //save social links of a team member
+    function save_social_links($user_id) {
+        $this->update_only_allowed_members($user_id);
+
+        $id = 0;
+        $has_social_links = $this->Social_links_model->get_one($user_id);
+        if (isset($has_social_links->id)) {
+            $id = $has_social_links->id;
+        }
+
+        $social_link_data = array(
+            "facebook" => $this->input->post('facebook'),
+            "twitter" => $this->input->post('twitter'),
+            "linkedin" => $this->input->post('linkedin'),
+            "googleplus" => $this->input->post('googleplus'),
+            "digg" => $this->input->post('digg'),
+            "youtube" => $this->input->post('youtube'),
+            "pinterest" => $this->input->post('pinterest'),
+            "instagram" => $this->input->post('instagram'),
+            "github" => $this->input->post('github'),
+            "tumblr" => $this->input->post('tumblr'),
+            "vine" => $this->input->post('vine'),
+            "user_id" => $user_id,
+            "id" => $id ? $id : $user_id
+        );
+
+        $this->Social_links_model->save($social_link_data, $id);
+        echo json_encode(array("success" => true, 'message' => lang('record_updated')));
+    }
+
+    //show account settings of a team member
+    function account_settings($user_id) {
+        $this->only_admin_or_own($user_id);
+
+        $view_data['user_info'] = $this->Users_model->get_one($user_id);
+        if ($view_data['user_info']->is_admin) {
+            $view_data['user_info']->role_id = "admin";
+        }
+        $view_data['role_dropdown'] = $this->_get_roles_dropdown();
+        $this->load->view("users/account_settings", $view_data);
+    }
+
+    //prepare the dropdown list of roles
+    private function _get_roles_dropdown() {
+        /*$role_dropdown = array(
+            "0" => lang('team_member'),
+            "admin" => lang('admin') //static role
+        );
+        /*$roles = $this->Roles_model->get_all(array("deleted" => 0))->result();
+        foreach ($roles as $role) {
+            $role_dropdown[$role->id] = $role->title;
+        }*/
+		$role_dropdown[0]='به پرداخت';
+		$role_dropdown[2]='آپ';
+        return $role_dropdown;
+    }
+
+    //save account settings of a team member
+    function save_account_settings($user_id) {
+        $this->only_admin_or_own($user_id);
+
+        if ($this->Users_model->is_email_exists($this->input->post('email'), $user_id)) {
+            echo json_encode(array("success" => false, 'message' => lang('duplicate_email')));
+            exit();
+        }
+        $account_data = array(
+            "email" => $this->input->post('email')
+        );
+
+        if ($this->login_user->is_admin && $this->login_user->id != $user_id) {
+            //only admin user has permission to update team member's role
+            //but admin user can't update his/her own role 
+            $role = $this->input->post('role');
+            $role_id = $role;
+
+            if ($role === "admin") {
+                $account_data["is_admin"] = 1;
+                $account_data["role_id"] = 0;
+            } else {
+                $account_data["is_admin"] = 0;
+                $account_data["role_id"] = $role_id;
+            }
+
+            $account_data['disable_login'] = $this->input->post('disable_login');
+            $account_data['status'] = $this->input->post('status') === "inactive" ? "inactive" : "active";
+        }
+
+        //don't reset password if user doesn't entered any password
+        if ($this->input->post('password')) {
+            $account_data['password'] = md5($this->input->post('password'));
+        }
+
+        if ($this->Users_model->save($account_data, $user_id)) {
+            echo json_encode(array("success" => true, 'message' => lang('record_updated')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('error_occurred')));
+        }
+    }
+
+    //save profile image of a team member
+    function save_profile_image($user_id = 0) {
+        $this->update_only_allowed_members($user_id);
+
+        //process the the file which has uploaded by dropzone
+        $profile_image = str_replace("~", ":", $this->input->post("profile_image"));
+
+        if ($profile_image) {
+            $profile_image = move_temp_file("avatar.png", get_setting("profile_image_path"), "", $profile_image);
+
+            $image_data = array("image" => $profile_image);
+
+            $this->Users_model->save($image_data, $user_id);
+            echo json_encode(array("success" => true, 'message' => lang('profile_image_changed')));
+        }
+
+        //process the the file which has uploaded using manual file submit
+        if ($_FILES) {
+            $profile_image_file = get_array_value($_FILES, "profile_image_file");
+            $image_file_name = get_array_value($profile_image_file, "tmp_name");
+            if ($image_file_name) {
+                $profile_image = move_temp_file("avatar.png", get_setting("profile_image_path"), "", $image_file_name);
+                $image_data = array("image" => $profile_image);
+                $this->Users_model->save($image_data, $user_id);
+                echo json_encode(array("success" => true, 'message' => lang('profile_image_changed')));
+            }
+        }
+    }
+
+    //show projects list of a team member
+    function projects_info($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/projects_info", $view_data);
+        }
+    }
+	
+	//show cash list of a team member
+    function cash_info($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/cash_info", $view_data);
+        }
+    }
+	function credit_info($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/credit_info", $view_data);
+        }
+    }
+	function terminals_info($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/terminals_info", $view_data);
+        }
+    }
+	function product_info($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/product_info", $view_data);
+        }
+    }
+	function store_product($user_id) {
+        if ($user_id) {
+            $view_data['user_id'] = $user_id;
+            $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("orders", $this->login_user->is_admin, $this->login_user->user_type);
+            $this->load->view("organizational/store_product", $view_data);
+        }
+    }
+
+    public function broker() {
+        $view_data["show_contact_info"] = $this->can_view_team_members_contact_info();
+
+        $view_data["custom_field_headers"] = $this->Custom_fields_model->get_custom_field_headers_for_table("team_members", $this->login_user->is_admin, $this->login_user->user_type);
+
+        $this->template->rander("organizational/broker", $view_data);
+    }
+     
+	function broker_list() {
+        $custom_fields = $this->Custom_fields_model->get_available_fields_for_table("team_members", $this->login_user->is_admin, $this->login_user->user_type);
+        $options = array(
+            "status" => $this->input->post("status"),
+            "user_type" => "organizational",
+            "custom_fields" => $custom_fields
+        );
+
+
+        $list_data = $this->Users_model->get_broker_client($options)->result();
+        $result = array();
+        foreach ($list_data as $data) {
+            $result[] = $this->_make_row_client($data, $custom_fields);
+        }
+        echo json_encode(array("data" => $result));
+    }
+
+	private function _make_row_client($data, $custom_fields) {
+        $image_url = get_avatar($data->image);
+        //$user_avatar = "<span class='avatar avatar-xs'><img src='$image_url' alt='...'></span>";
+        $full_name = $data->first_name . " " . $data->last_name . " ";
+        //check contact info view permissions
+        $show_cotact_info = $this->can_view_team_members_contact_info();
+        if($data->leveler==0){$level=$data->leveler;}else{$level='پایه';}
+        if($data->status=='active'){$status='فعال';}else{$status='غیرفعال';}
+        $row_data = array(
+			$data->first_name.' '.$data->last_name,
+            $data->email,
+            $data->melli_code,
+            $data->state,
+            $level,
+            $status
+        );
+        return $row_data;
+    }
+    function modal_form_broker() {
+        validate_submitted_data(array(
+            "id" => "numeric"
+        ));
+
+        $view_data['role_dropdown'] = $this->_get_roles_dropdown();
+
+        $id = $this->input->post('id');
+        $options = array(
+            "id" => $id,
+        );
+
+        $view_data['model_info'] = $this->Users_model->get_details($options)->row();
+
+        $view_data["custom_fields"] = $this->Custom_fields_model->get_combined_details("team_members", 0, $this->login_user->is_admin, $this->login_user->user_type)->result();
+
+        $this->load->view('organizational/modal_form_broker', $view_data);
+    }
+    function add_broker_client() {
+        //check duplicate email address, if found then show an error message
+        if ($this->Users_model->is_email_exists($this->input->post('email'))) {
+            echo json_encode(array("success" => false, 'message' => lang('duplicate_email')));
+            exit();
+        }
+
+        validate_submitted_data(array(
+            "email" => "required|valid_email",
+            "first_name" => "required",
+            "last_name" => "required",
+            //"role" => "required"
+        ));
+        $user_key=md5(uniqid(rand(), true));
+        $user_data = array(
+            "email" => $this->input->post('email'),
+            "password" => md5($this->input->post('password')),
+            "first_name" => $this->input->post('first_name'),
+            "last_name" => $this->input->post('last_name'),
+            "melli_code" => $this->input->post('melli_code'),
+            "state" => $this->input->post('state'),
+            "city" => $this->input->post('city'),
+            "is_admin" => $this->input->post('is_admin'),
+            "address" => $this->input->post('address'),
+            "phone" => $this->input->post('phone'),
+            "gender" => $this->input->post('gender'),
+            "user_type" => "organizational",
+            "user_key" => $user_key,
+            "created_at" => get_current_utc_time()
+        );
+        $user_data["is_admin"] = 0;
+        $user_data["role_id"] = 0;
+        //add a new team member
+        $user_id = $this->Users_model->save($user_data);
+        $this->Users_model->add_new_card($user_key);
+        if ($user_id) {
+            echo json_encode(array("success" => true, "data" => $this->_row_data($user_id), 'id' => $user_id, 'message' => lang('record_saved')));
+        } else {
+            echo json_encode(array("success" => false, 'message' => lang('error_occurred')));
+        }
+    }
+    
+    //edit profile
+    function profile($id = 0, $tab = "") {
+        if ($id * 1) {
+            //we have an id. view the team_member's profie
+            $options = array("id" => $id);
+            $user_info = $this->Users_model->get_details($options)->row();
+            if ($user_info) {
+
+                //check which tabs are viewable for current logged in user
+                $view_data['show_timeline'] = get_setting("module_timeline") ? true : false;
+
+                $can_update_team_members_info = $this->can_update_team_members_info($id);
+
+                $view_data['show_general_info'] = $can_update_team_members_info;
+                $view_data['show_job_info'] = false;
+
+                $view_data['show_account_settings'] = false;
+
+                $show_attendance = false;
+                $show_leave = false;
+
+                $expense_access_info = $this->get_access_info("expense");
+                $view_data["show_expense_info"] = (get_setting("module_expense") == "1" && $expense_access_info->access_type == "all") ? true : false;
+
+                //admin can access all members attendance and leave
+                //none admin users can only access to his/her own information 
+
+                if ($this->login_user->is_admin || $user_info->id === $this->login_user->id) {
+                    $show_attendance = true;
+                    $show_leave = true;
+                    $view_data['show_job_info'] = true;
+                    $view_data['show_account_settings'] = true;
+                } else {
+                    //none admin users but who has access to this team member's attendance and leave can access this info
+                    $access_timecard = $this->get_access_info("attendance");
+                    if ($access_timecard->access_type === "all" || in_array($user_info->id, $access_timecard->allowed_members)) {
+                        $show_attendance = true;
+                    }
+
+                    $access_leave = $this->get_access_info("leave");
+                    if ($access_leave->access_type === "all" || in_array($user_info->id, $access_leave->allowed_members)) {
+                        $show_leave = true;
+                    }
+                }
+
+
+                //check module availability
+                $view_data['show_attendance'] = $show_attendance && get_setting("module_attendance") ? true : false;
+                $view_data['show_leave'] = $show_leave && get_setting("module_leave") ? true : false;
+
+
+                //check contact info view permissions
+                $show_cotact_info = $this->can_view_team_members_contact_info();
+                $show_social_links = $this->can_view_team_members_social_links();
+
+                //own info is always visible
+                if ($id == $this->login_user->id) {
+                    $show_cotact_info = true;
+                    $show_social_links = true;
+                }
+
+                $view_data['show_cotact_info'] = $show_cotact_info;
+                $view_data['show_social_links'] = $show_social_links;
+
+
+                //show projects tab to admin
+                $view_data['show_projects'] = false;
+                if ($this->login_user->is_admin) {
+                    $view_data['show_projects'] = true;
+                }
+
+
+                $view_data['tab'] = $tab; //selected tab
+                $view_data['user_info'] = $user_info;
+                $view_data['social_link'] = $this->Social_links_model->get_one($id);
+                $this->template->rander("organizational/profile", $view_data);
+            } else {
+                show_404();
+            }
+        } else {
+            //we don't have any specific id to view. show the list of team_member
+            $view_data['team_members'] = $this->Users_model->get_details(array("user_type" => "organizational", "status" => "active"))->result();
+            $this->template->rander("organizational/profile_card", $view_data);
+        }
+    }
+
+    //change client password
+    function change_password($id = 0) {
+        if ($id * 1) {
+            //we have an id. view the team_member's profie
+            $options = array("id" => $id);
+            $user_info = $this->Users_model->get_details($options)->row();
+            
+            if ($user_info) {
+
+                //check which tabs are viewable for current logged in user
+                $view_data['show_timeline'] = get_setting("module_timeline") ? true : false;
+
+                $can_update_team_members_info = $this->can_update_team_members_info($id);
+
+                $view_data['show_general_info'] = $can_update_team_members_info;
+                $view_data['show_job_info'] = false;
+
+                $view_data['show_account_settings'] = false;
+
+                $show_attendance = false;
+                $show_leave = false;
+
+                $expense_access_info = $this->get_access_info("expense");
+                $view_data["show_expense_info"] = (get_setting("module_expense") == "1" && $expense_access_info->access_type == "all") ? true : false;
+
+                //admin can access all members attendance and leave
+                //none admin users can only access to his/her own information 
+
+                if ($this->login_user->is_admin || $user_info->id === $this->login_user->id) {
+                    $show_attendance = true;
+                    $show_leave = true;
+                    $view_data['show_job_info'] = true;
+                    $view_data['show_account_settings'] = true;
+                } else {
+                    //none admin users but who has access to this team member's attendance and leave can access this info
+                    $access_timecard = $this->get_access_info("attendance");
+                    if ($access_timecard->access_type === "all" || in_array($user_info->id, $access_timecard->allowed_members)) {
+                        $show_attendance = true;
+                    }
+
+                    $access_leave = $this->get_access_info("leave");
+                    if ($access_leave->access_type === "all" || in_array($user_info->id, $access_leave->allowed_members)) {
+                        $show_leave = true;
+                    }
+                }
+
+
+                //check module availability
+                $view_data['show_attendance'] = $show_attendance && get_setting("module_attendance") ? true : false;
+                $view_data['show_leave'] = $show_leave && get_setting("module_leave") ? true : false;
+
+
+                //check contact info view permissions
+                $show_cotact_info = $this->can_view_team_members_contact_info();
+                $show_social_links = $this->can_view_team_members_social_links();
+
+                //own info is always visible
+                if ($id == $this->login_user->id) {
+                    $show_cotact_info = true;
+                    $show_social_links = true;
+                }
+
+                $view_data['show_cotact_info'] = $show_cotact_info;
+                $view_data['show_social_links'] = $show_social_links;
+
+
+                //show projects tab to admin
+                $view_data['show_projects'] = false;
+                if ($this->login_user->is_admin) {
+                    $view_data['show_projects'] = true;
+                }
+
+
+                //$view_data['tab'] = $tab; //selected tab
+                $view_data['user_info'] = $user_info;
+                $view_data['social_link'] = $this->Social_links_model->get_one($id);
+                $this->template->rander("organizational/change_password", $view_data);
+            } else {
+                show_404();
+            }
+        } else {
+            //we don't have any specific id to view. show the list of team_member
+            $view_data['team_members'] = $this->Users_model->get_details(array("user_type" => "organizational", "status" => "active"))->result();
+            $this->template->rander("organizational/profile_card", $view_data);
+        }
+    }
+
+}

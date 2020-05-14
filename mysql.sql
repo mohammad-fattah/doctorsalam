@@ -1,0 +1,13 @@
+-- cPanel mysql backup
+GRANT USAGE ON *.* TO 'hadafsaz'@'89.39.208.70' IDENTIFIED BY PASSWORD '*2C52BD8AFE81DADC2725A5BA1043D57B92980060';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz'@'89.39.208.70';
+GRANT USAGE ON *.* TO 'hadafsaz'@'cp25.payforbuildings.top' IDENTIFIED BY PASSWORD '*2C52BD8AFE81DADC2725A5BA1043D57B92980060';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz'@'cp25.payforbuildings.top';
+GRANT USAGE ON *.* TO 'hadafsaz'@'localhost' IDENTIFIED BY PASSWORD '*2C52BD8AFE81DADC2725A5BA1043D57B92980060';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz'@'localhost';
+GRANT USAGE ON *.* TO 'hadafsaz_root'@'89.39.208.70' IDENTIFIED BY PASSWORD '*C408E4CD9567A9AA84DA505578A53FBDBAFC1438';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz_root'@'89.39.208.70';
+GRANT USAGE ON *.* TO 'hadafsaz_root'@'cp25.payforbuildings.top' IDENTIFIED BY PASSWORD '*C408E4CD9567A9AA84DA505578A53FBDBAFC1438';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz_root'@'cp25.payforbuildings.top';
+GRANT USAGE ON *.* TO 'hadafsaz_root'@'localhost' IDENTIFIED BY PASSWORD '*C408E4CD9567A9AA84DA505578A53FBDBAFC1438';
+GRANT ALL PRIVILEGES ON `hadafsaz\_doctor`.* TO 'hadafsaz_root'@'localhost';
